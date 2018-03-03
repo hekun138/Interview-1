@@ -28,4 +28,8 @@
 >>>三级缩进
 
 引入图片格式:
+外部图片
 ![图片描述](http://img.blog.csdn.net/20160916152402267) 
+<br>
+github项目图片
+![图片描述](https://github.com/l511407563/Interview/blob/master/image/1.png) 
