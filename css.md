@@ -1,11 +1,9 @@
 # 1. 定位(position)
-```diff
-relative: 相对定位, 没有脱离文档流 
-absolute: 绝对定位, 脱离文档流, 向外层查找父元素, 遇到的第一个position: relative;的元素为父元素, 以该父元素的原点为(0,0)定位 
-fixed: 固定定位, 脱离文档流 
-static: 继承父元素的定位 
-```
-	
+    relative: 相对定位, 没有脱离文档流 
+    absolute: 绝对定位, 脱离文档流, 向外层查找父元素, 遇到的第一个position: relative;的元素为父元素, 以该父元素的原点为(0,0)定位 
+    fixed: 固定定位, 脱离文档流 
+    static: 继承父元素的定位 
+
 # 2. 居中
 
 # 3. css3新特性
