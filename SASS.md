@@ -90,7 +90,25 @@ c.伪类嵌套
 
 	写法同属性嵌套类似: 有冒号
 ![](https://github.com/l511407563/Interview/blob/master/sass/image/伪类嵌套.png) <br> 
-
+### 9.3 混合宏
+	@mixin 是用来声明混合宏的关键词
+	@include 是用来调用混合宏的关键词
+	
+	不带参数混合宏
+	@mixin border-radius{}
+	
+	带参数混合宏
+	@mixin border-radius($radius:5px){}
+	
+	复杂的混合宏
+	@mixin border-radius($radius...){判断语句}
+	
+	例子
+	![](https://github.com/l511407563/Interview/blob/master/sass/image/混合宏1.png) <br> 
+	
+### 9.4 扩展/继承
+	@extend <br>
+	![](https://github.com/l511407563/Interview/blob/master/sass/image/继承.png) <br> 
 
 
 
