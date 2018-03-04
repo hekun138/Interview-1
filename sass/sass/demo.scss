@@ -1,0 +1,20 @@
+$divColor: #000;
+$spanColor: #fff;
+$width: 100px;
+$height: 100px;
+
+body {
+
+    div {
+        width: $width;
+        height: $height;
+        background-color: $divColor;
+        
+        span {
+            color: $spanColor;
+        }
+    }
+}
+
+
+

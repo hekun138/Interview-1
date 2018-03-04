@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AASI,QAAI;EACA,KAAK,EANL,KAAK;EAOL,MAAM,EANL,KAAK;EAON,gBAAgB,EAVb,IAAI;;AAYP,aAAK;EACD,KAAK,EAZL,IAAI",
+"sources": ["../sass/expanded.scss"],
+"names": [],
+"file": "expanded.css"
+}
