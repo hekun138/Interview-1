@@ -108,6 +108,21 @@ c.伪类嵌套
 	@extend
 ![](https://github.com/l511407563/Interview/blob/master/sass/image/继承.png) <br> 
 
+### 9.5 占位符
+	%placeholder
+	优点: 
+		%clear{
+			clear: both;
+		}
+		如果没有被@extend, 它是不会在.css文件中产生代码块的。
+		
+		.clear{
+			clear: both;
+		}
+		不管有没有被调用, 它都会在.css文件中产生代码块, 造成代码冗余。
+	
+
+
 
 
 
