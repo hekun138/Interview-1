@@ -120,6 +120,8 @@ c.伪类嵌套
 			clear: both;
 		}
 		不管有没有被调用, 它都会在.css文件中产生代码块, 造成代码冗余。
+### 宏 继承 占位符 使用场景
+![](https://github.com/l511407563/Interview/blob/master/sass/image/宏继承占位符比较.png) <br> 
 	
 
 
