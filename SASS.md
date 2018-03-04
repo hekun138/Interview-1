@@ -1,4 +1,5 @@
-# 步骤: 安装ruby环境  --->  在ruby环境环境中安装sass  --->  安装sass的框架compass
+# 步骤: 
+安装ruby环境  --->  在ruby环境环境中安装sass  --->  安装sass的框架compass
 
 ## 1. 安装ruby
 [安装ruby](https://rubyinstaller.org/downloads/ "ruby官网")
@@ -28,33 +29,33 @@
 
 ## 6. sass编译
 	单文件编译
-		一次性编译
-			sass <要编译的Sass文件路径>/style.scss:<要输出CSS文件路径>/style.css
-		监听编译
-		sass --watch <要编译的Sass文件路径>/style.scss:<要输出CSS文件路径>/style.css
+	  一次性编译
+	    sass <要编译的Sass文件路径>/style.scss:<要输出CSS文件路径>/style.css
+	  监听编译
+	    sass --watch <要编译的Sass文件路径>/style.scss:<要输出CSS文件路径>/style.css
 		
 	多文件编译
-		sass --watch sass/:css/
+	    sass --watch sass/:css/
 		
 ## 7. sass不用样式风格的输出方法
-	[demo.css](https://github.com/l511407563/Interview/blob/master/sass/sass/demo.scss) <br>
-	![](https://github.com/l511407563/Interview/blob/master/sass/image/demo.png)
-	
-	嵌套输出方式 [nested.css](https://github.com/l511407563/Interview/blob/master/sass/css/nested.css) <br>
-		sass --watch sass/demo.scss:css/nested.css --style nested
-	![](https://github.com/l511407563/Interview/blob/master/sass/image/nested.png)
-		
-	展开输出方式 [expanded.css](https://github.com/l511407563/Interview/blob/master/sass/css/expanded.css) <br>  
-		sass --watch sass/demo.scss:css/expanded.css --style expanded
-	![](https://github.com/l511407563/Interview/blob/master/sass/image/expanded.png)
-		
-	紧凑输出方式 [compact.css](https://github.com/l511407563/Interview/blob/master/sass/css/compact.css) <br>  
-		sass --watch sass/demo.scss:css/compact.css --style compact
-	![](https://github.com/l511407563/Interview/blob/master/sass/image/compact.png)
-		
-	压缩输出方式 [compressed.css](https://github.com/l511407563/Interview/blob/master/sass/css/compressed.css) <br>  
-		sass --watch sass/demo.scss:css/compressed.css --style compressed
-	![](https://github.com/l511407563/Interview/blob/master/sass/image/compressed.png)
+[demo.css](https://github.com/l511407563/Interview/blob/master/sass/sass/demo.scss) <br>
+![](https://github.com/l511407563/Interview/blob/master/sass/image/demo.png) <br>
+
+嵌套输出方式 [nested.css](https://github.com/l511407563/Interview/blob/master/sass/css/nested.css) <br>
+sass --watch sass/demo.scss:css/nested.css --style nested <br>
+![](https://github.com/l511407563/Interview/blob/master/sass/image/nested.png) <br>	
+
+展开输出方式 [expanded.css](https://github.com/l511407563/Interview/blob/master/sass/css/expanded.css)  
+sass --watch sass/demo.scss:css/expanded.css --style expanded <br>
+![](https://github.com/l511407563/Interview/blob/master/sass/image/expanded.png) <br>	
+
+紧凑输出方式 [compact.css](https://github.com/l511407563/Interview/blob/master/sass/css/compact.css) 
+sass --watch sass/demo.scss:css/compact.css --style compact <br>
+![](https://github.com/l511407563/Interview/blob/master/sass/image/compact.png)	<br>
+
+压缩输出方式 [compressed.css](https://github.com/l511407563/Interview/blob/master/sass/css/compressed.css) 
+sass --watch sass/demo.scss:css/compressed.css --style compressed <br>
+![](https://github.com/l511407563/Interview/blob/master/sass/image/compressed.png) <br>
 	
 	
 	
