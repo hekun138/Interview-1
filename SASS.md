@@ -2,7 +2,7 @@
 安装ruby环境  --->  在ruby环境环境中安装sass  --->  安装sass的框架compass
 
 ## 1. 安装ruby
-[安装ruby](https://rubyinstaller.org/downloads/ "ruby官网") <br>
+[安装ruby地址](https://rubyinstaller.org/downloads/ "ruby官网") <br>
 	在安装的时候，请勾选Add Ruby executables to your PATH这个选项，添加环境变量，不然以后使用编译软件的时候会提示找不到ruby环境 <br>
 	检测是否安装成功: ruby -v
 
