@@ -69,7 +69,7 @@ sass --watch sass/demo.scss:css/compressed.css --style compressed <br>
 ##### c.本地文件也被修改
 ![](https://github.com/l511407563/Interview/blob/master/sass/image/css调试3.png) 
 
-## 9. sass语法
+## 9. sass常用语法
 ### 9.1 变量
 	普通变量: $width: 100px;
 	默认变量: $width: 100px !default;
