@@ -16,6 +16,8 @@
 
 ## [linux](https://github.com/l511407563/Interview/blob/master/linux.md)
 
+## [git](https://github.com/l511407563/Interview/blob/master/git.md)
+
 ## [ajax](https://github.com/l511407563/Interview/blob/master/ajax.md)
 
 ## [http](https://github.com/l511407563/Interview/blob/master/http.md)
