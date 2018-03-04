@@ -112,12 +112,12 @@ c.伪类嵌套
 	%placeholder
 	优点: 
 		%clear{
-			clear: both;
+		    clear: both;
 		}
 		如果没有被@extend, 它是不会在.css文件中产生代码块的。
 		
 		.clear{
-			clear: both;
+		    clear: both;
 		}
 		不管有没有被调用, 它都会在.css文件中产生代码块, 造成代码冗余。
 	
