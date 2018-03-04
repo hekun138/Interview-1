@@ -49,11 +49,11 @@ sass --watch sass/demo.scss:css/nested.css --style nested <br>
 sass --watch sass/demo.scss:css/expanded.css --style expanded <br>
 ![](https://github.com/l511407563/Interview/blob/master/sass/image/expanded.png) <br>	
 
-紧凑输出方式 [compact.css](https://github.com/l511407563/Interview/blob/master/sass/css/compact.css) 
+紧凑输出方式 [compact.css](https://github.com/l511407563/Interview/blob/master/sass/css/compact.css) <br>
 sass --watch sass/demo.scss:css/compact.css --style compact <br>
 ![](https://github.com/l511407563/Interview/blob/master/sass/image/compact.png)	<br>
 
-压缩输出方式 [compressed.css](https://github.com/l511407563/Interview/blob/master/sass/css/compressed.css) 
+压缩输出方式 [compressed.css](https://github.com/l511407563/Interview/blob/master/sass/css/compressed.css) <br>
 sass --watch sass/demo.scss:css/compressed.css --style compressed <br>
 ![](https://github.com/l511407563/Interview/blob/master/sass/image/compressed.png) <br>
 	
