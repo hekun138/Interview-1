@@ -41,7 +41,7 @@
 [demo.css](https://github.com/l511407563/Interview/blob/master/sass/sass/demo.scss) <br>
 ![](https://github.com/l511407563/Interview/blob/master/sass/image/demo.png) <br>
 
-嵌套输出方式 [nested.css](https://github.com/l511407563/Interview/blob/master/sass/css/nested.css) <br>
+嵌套输出方式(默认) [nested.css](https://github.com/l511407563/Interview/blob/master/sass/css/nested.css) <br>
 sass --watch sass/demo.scss:css/nested.css --style nested <br>
 ![](https://github.com/l511407563/Interview/blob/master/sass/image/nested.png) <br>	
 
@@ -69,8 +69,24 @@ sass --watch sass/demo.scss:css/compressed.css --style compressed <br>
 ##### 本地文件也被修改
 ![](https://github.com/l511407563/Interview/blob/master/sass/image/css调试3.png) 
 
-
-
+## 9. sass语法
+### 9.1 变量
+	普通变量: $width: 100px;
+	默认变量: $width: 100px !default;
+	全局变量与局部变量和js一样
+### 9.2 嵌套
+a. 选择器嵌套 
+	&代表&所在的嵌套结构
+	这里header & = header nav a
+![](https://github.com/l511407563/Interview/blob/master/sass/image/选择器嵌套.png) <br> 
+b. 属性嵌套
+	注意属性嵌套和选择器嵌套的区别
+	属性嵌套有冒号: font-size写成  font: {size}
+	选择器嵌套无冒号: header {div}
+![](https://github.com/l511407563/Interview/blob/master/sass/image/属性嵌套.png) <br> 
+c. 伪类嵌套
+	写法同属性嵌套类似: 有冒号
+![](https://github.com/l511407563/Interview/blob/master/sass/image/伪类嵌套.png) <br> 
 
 
 
