@@ -58,7 +58,7 @@ sass --watch sass/demo.scss:css/compressed.css --style compressed <br>
 ![](https://github.com/l511407563/Interview/blob/master/sass/image/compressed.png) <br>
 
 ## 8. sass调试(适用任何css文件)
-	http://www.imooc.com/video/7804
+	[css调试视频教程](http://www.imooc.com/video/7804)
 	原理: 在chrome的调试工具Sources中添加工作目录workspaces, 然后将浏览器的Sources目录映射到本地
 	作用: 你可以直接修改浏览器中的文件, 本地文件也会被同步
 效果图:
