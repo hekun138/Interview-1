@@ -76,12 +76,12 @@ sass --watch sass/demo.scss:css/compressed.css --style compressed <br>
 	全局变量与局部变量和js一样
 ### 9.2 嵌套
 a. 选择器嵌套 <br> 
-	`&代表&所在的嵌套结构 
+	`&代表&所在的嵌套结构  <br>
 	这里header & = header nav a`
 ![](https://github.com/l511407563/Interview/blob/master/sass/image/选择器嵌套.png) <br> 
 b. 属性嵌套 <br> 
-	`注意属性嵌套和选择器嵌套的区别 
-	属性嵌套有冒号: font-size写成  font: {size} 
+	`注意属性嵌套和选择器嵌套的区别 <br> 
+	属性嵌套有冒号: font-size写成  font: {size}  <br>
 	选择器嵌套无冒号: header {div}`
 ![](https://github.com/l511407563/Interview/blob/master/sass/image/属性嵌套.png) <br> 
 c. 伪类嵌套 <br> 
