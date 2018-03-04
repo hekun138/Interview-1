@@ -102,13 +102,11 @@ c.伪类嵌套
 	
 	复杂的混合宏
 	@mixin border-radius($radius...){判断语句}
-	
-	例子
-	![](https://github.com/l511407563/Interview/blob/master/sass/image/混合宏1.png) <br> 
+![](https://github.com/l511407563/Interview/blob/master/sass/image/混合宏1.png) <br> 
 	
 ### 9.4 扩展/继承
-	@extend <br>
-	![](https://github.com/l511407563/Interview/blob/master/sass/image/继承.png) <br> 
+	@extend
+![](https://github.com/l511407563/Interview/blob/master/sass/image/继承.png) <br> 
 
 
 
