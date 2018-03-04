@@ -123,6 +123,14 @@ c.伪类嵌套
 ### 宏 继承 占位符 使用场景
 ![](https://github.com/l511407563/Interview/blob/master/sass/image/宏继承占位符比较.png) <br> 
 	
+### 9.6 加减乘除
+	sass的加减乘除符号两边要加上空格, 否则会被当成字符串。
+	不同单位的变量不能直接运算。
+	$width1: 800px;
+	$width2: 200px;
+	.box {
+		width: (($width1 + $width2) - 10 * 2) / 2;
+	}
 
 
 
