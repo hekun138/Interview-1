@@ -8,11 +8,7 @@
 
 ## [SASS](https://github.com/l511407563/Interview/blob/master/SASS.md)
 
-## [angular](https://github.com/l511407563/Interview/blob/master/angular.md)
-
-## [vue](https://github.com/l511407563/Interview/blob/master/vue.md)
-
-## [react](https://github.com/l511407563/Interview/blob/master/react.md)
+## [前端框架集合](https://github.com/l511407563/Interview/blob/master/前端框架集合.md)
 
 ## [node](https://github.com/l511407563/Interview/blob/master/node.md)
 
