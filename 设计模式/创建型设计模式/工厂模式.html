@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 工厂模式
+        // 创建工厂
+        function Factory(name) {
+            return new this[name]();
+        }
+
+        Factory.prototype = {
+            Fn1 : function () {
+                this.a = 1;
+                this.fn = function () {}
+            },
+            Fn2 : function () {
+                this.a = 2;
+                this.fn = function () {}
+            },
+            Fn3 : function () {
+                this.a = 3;
+                this.fn = function () {}
+            }
+        };
+
+        // 调用方法
+        new Factory('Fn1');
+    
+    
+    
+    </script>
+    
+</body>
+</html>

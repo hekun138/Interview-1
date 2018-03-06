@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // 原型模式
+        // 父类
+        function Factory(data) {
+           this.data = data;
+        }
+
+        Factory.prototype = {
+            Fn1 : function () {
+                this.a = 1;
+                this.fn = function () {}
+            },
+            Fn2 : function () {
+                this.a = 2;
+                this.fn = function () {}
+            },
+            Fn3 : function () {
+                this.a = 3;
+                this.fn = function () {}
+            }
+        };
+
+        // 中间函数继承
+        // 作用: 
+        function F() {}
+        F.prototype = Factory.prototype;
+
+        // 子类继承
+        function Son(data) {
+            // 构造函数继承
+            Factory.call(this, data);
+        }
+        // 原型继承
+        Son.prototype = new F();
+        // 拓展
+        Son.prototype.fn = function () {};
+    
+        new Son('参数');
+    
+    
+    
+    </script>
+
+</body>
+</html>

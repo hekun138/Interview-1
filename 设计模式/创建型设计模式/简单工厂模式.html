@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 简单工厂模式
+        // 作用: 归纳方法, 方便管理
+        function Fn1() {
+            this.a = 1;
+            this.fn = function () {}
+        }
+
+        function Fn2() {
+            this.a = 2;
+            this.fn = function () {}
+        }
+
+        function Fn3() {
+            this.a = 3;
+            this.fn = function () {}
+        }
+        // 创建简单工厂
+        function Factory(name) {
+            var o = null;
+            switch (name) 
+            {
+                case 'Fn1':
+                    o = new Fn1();
+                    break;
+                case 'Fn2':
+                    o = new Fn2();
+                    break;
+                case 'Fn3':
+                    o = new Fn3();
+                    break;
+            }
+            return o;
+        }
+
+        // 调用方法
+        new Factory('Fn1');
+    
+    
+    
+    </script>
+    
+</body>
+</html>

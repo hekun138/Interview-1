@@ -1,3 +1,4 @@
+### 思维线: 普通函数 ---> 闭包 ---> return && new ---> 构造函数 && 原型 ---> 原型链 ---> 继承   
 ### 1. 闭包
     作用: 
         a. 作为函数和外部沟通的桥梁, 使得外部可以访问到函数内部的局部变量和方法
@@ -21,5 +22,127 @@
         可以把闭包看成一个光碟对象, 这个对象通过return暴露出一些接口, 我们可以通过这个接口去访问这个光碟内部的电影, 
         并且你在看光碟内的电影的时候可以保存, 等你下次再访问的时候会从上一次停止播放的地方继续观看。
 
-### 2. 原型
-![原型链](https://github.com/l511407563/Interview/blob/master/javascript/image/proto.jpg)
+### 2. new 构造函数 和 return 普通函数
+	new fn();
+	new后面跟的都是函数
+	最终都返回一个对象
+	
+	函数执行前加new对函数的影响:
+		1. 函数内部会产生一个对象, this指向这个对象, 注意: 不是指向这个函数。(普通函数内部this指向null或者window)
+		2. 函数默认返回这个对象 (所以不需要return)
+		
+		普通函数: 使用return返回函数中已有对象
+		function fn1() {
+			console.log(this); // window
+			var obj = {};
+			return obj;
+		}
+		fn1();
+		
+		构造函数: 首字母大写, 使用new生成并返回一个新对象
+		function Fn2() {
+			// 注意, this不会指向fn2这个函数, 而是指向fn2内部产生的一个对象, 而obj通过=引用了该对象, 所以this指向了obj
+			console.log(this); // obj	
+		}
+		var obj = new fn2();
+			
+### 3. 构造函数 和 原型
+		构造函数: 
+			构造函数内部的方法为每个new出来的新对象的 "私有属性"
+		原型:
+			prototype上的方法为所有对象的 "公共属性"
+		实例对象:
+			通过new关键字生成的对象
+			
+		function Factory(data) {
+			// 实例对象的私有属性, 判断是否是私有属性 obj.hasOwnProperty(attr)
+			this.data = data;
+			console.log(this); // this执行实例化对象
+		}
+		
+		// 构造函数的私有属性, 只能函数自己访问
+		Factory.selfFn = function () {};
+		
+		// 公共属性
+		Factory.prototype = {
+			fn : function () {
+				console.log(this); // this执行实例化对象
+			}
+		};
+		
+		var f1 = new Factory();
+		var f2 = new Factory();
+		
+		所以,创建一个类的时候
+			不同的部分, 每个实例对象都不一样的部分, 放在构造函数里面
+			相同的部分, 每个实例对象都可以访问的部分, 放在原型里面
+			
+		注: 在构造函数中或者原型中, this指向的都是该实例化对象本身
+			
+### 4. 原型链 
+![原型图解](https://github.com/l511407563/Interview/blob/master/javascript/image/proto.jpg)<br>
+	访问某对象的方法
+		function Factory() {}
+		var f = new Factory();
+		f.fn();
+		
+		原型链:
+			先在实例化对象f自身查找fn
+			然后到f的构造函数的原型中找fn
+			然后到Object.prototype中找fn
+			都找不到返回undefine
+		
+		一个对象在访问某属性时会先从自身查找, 找不到再去上一层的prototype找, 直到Object.prototype
+	
+### 5. prototype 和 __proto__
+	每一个对象的__proto__就是该对象的构造函数的prototype
+	
+	function Father() {}
+	
+	Father.prototype = {};
+	
+	var son = new Father();
+	
+	son.__proto__ === Father.prototype;
+	
+	son.__proto__.__proto__ === Object.prototype;
+	
+### 6. instanceof 和 typeof
+	instanceof 
+		a instanceof b 相当于 在a的__proto__上可以找到b.prototype
+		
+	typeof 
+		数据类型判断
+		
+### 7. 			
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
