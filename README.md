@@ -2,6 +2,8 @@
 
 ## [JavaScript](https://github.com/l511407563/Interview/blob/master/JavaScript.md)
 
+## [设计模式](https://github.com/l511407563/Interview/blob/master/设计模式.md)
+
 ## [css](https://github.com/l511407563/Interview/blob/master/css.md)
 
 ## [html](https://github.com/l511407563/Interview/blob/master/html.md)

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    // 问题: 全局变量污染, 当合作开发的时候, 大家都将属性方法写在window对象上, 如果重名会造成后面的覆盖前面的
+        var a = 1;
+        var a = 2;
+        // console.log(a); // 2
+
+    // 解决办法：
+    // 1. 放在普通对象中
+    // 特点: 动态属性方法, 可以进行修改
+        var zhangsan = {
+            a : 1
+        };
+        var lisi = {
+            a : 2
+        };
+        // console.log(zhangsan.a); //1
+        // console.log(lisi.a);     //2
+
+
+    // 2. 单例模式, 放在闭包中
+    // 特点: 静态属性方法, 只能进行访问
+        var one = (function () {
+            var zhangsan = {
+                a : 1,
+                fn1 : function () {
+                    console.log('张三的静态方法, 只能进行访问, 不能修改');
+                }
+            };
+            var lisi = {
+                a : 2,
+                fn2 : function () {
+                    console.log('李四的静态方法, 只能进行访问, 不能修改');
+                }
+            };
+            return {
+                // 利用闭包返回一个方法getOne, 该方法
+                getzhangsan : function (attr) {
+                    return zhangsan[attr];
+                },
+                getlisi : function (attr) {
+                    return lisi[attr];
+                }
+            }
+        })();
+        console.log(one.getzhangsan('a'));  // 1
+        one.getzhangsan('fn1')();   // 张三的静态方法, 只能进行访问, 不能修改
+
+        console.log(one.getlisi('a')); // 2
+        one.getlisi('fn2')(); // 李四的静态方法, 只能进行访问, 不能修改
+
+
+    
+    </script>
+    
+</body>
+</html>
