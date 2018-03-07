@@ -114,7 +114,81 @@
 	typeof 
 		数据类型判断
 		
-### 7. 			
+### 7. 原型继承的几种方式
+在理解继承之前, 你需要理解 new prototype 构造函数和实例化对象的区别与联系 原型链 
+
+	先创建一个父类
+		function Father(param) {
+			this.param = param;
+		}
+		
+		function Mother(param) {
+			this.param = param;
+		}
+		
+		Father.prototype = {};
+		Mother.prototype = {};
+
+	7-1 原型继承(对象继承)
+		function Son() {};
+		
+		Son.prototype = new Father();
+	
+		首先, 原型是一个对象, 它是不能传参的, 所以原型继承不能传参
+		第二, new所产生的Father的实例化对象中, 都含有Father构造函数中的方法, 也有Father.prototype上的方法
+		第三, 由于每一次new都会产生一个新的实例化对象, 互不影响, 所以原型继承的方法是可以复用的
+		第四, 只能实现单继承, 继承Father或者Mother的实例
+		
+		总结: 原型继承, 不能传参, 父类构造函数(其实是从父类实例化对象上继承的,而不是直接从父类构造函数上继承的)和prototype中的方法都继承到了, 可以复用, 无法实现多继承
+		
+	7-2 构造函数继承(函数继承)
+		function Son(param) {
+			Father.call(this);
+			Mother.call(this);
+		}
+		
+		var son1 = new Son();
+		var son2 = new Son();
+		
+		首先, 构造函数是一个函数, 是可以传参的, 所以构造函数可以传参
+		第二, 无法继承父类prototype属性方法
+		第三, 无法复用, 每个子类都生成一个父类实例, 消耗性能
+		
+		总结: 构造函数继承, 可以传参, 不能继承原型, 无法复用, 可以实现多继承
+		
+	7-3 组合继承
+		function Son(param) {
+			Father.call(this);
+			Mother.call(this);
+		}
+		
+		Son.prototype = new Father(); // 原型继承会导致子类构造函数指向父类实例
+		
+		Son.prototype.constructor = Son; // 修复子类构造函数的指向
+		
+		首页, 可以传参
+		第二, 可以继承函数和原型中的方法
+		第三, 可以实现多继承
+		第四, 结合7-1和7-2可以发现, 继承了两次构造函数(实际上是从实例化对象上继承的)中的方法, 一次原型中的方法, 消耗资源
+		第五, 原型继承会导致子类构造函数指向父类实例, 需要修复子类构造函数的指向
+		
+		总结: 组合继承可以传参, 可以继承所有方法, 可以多继承, 但是构造函数中的方法继承了两次
+		
+	7-4 寄生组合继承
+		function Son(param) {
+			Father.call(this);
+			Mother.call(this);
+		}
+		
+		// 中介
+		function F() {}
+		F.prototype = Father.prototype;
+		
+		Son.prototype = new F();
+		
+		总结: 拥有以上三个继承所有的优点, 并且解决了构造函数方法继承了两次的问题
+		
+		
 
 
 	
