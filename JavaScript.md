@@ -132,6 +132,7 @@
 	7-1 原型继承(对象继承)
 		function Son() {};
 		
+		// 这里不能直接使用 Son.prototype = Father.prototype, 否则修改Son.prototype上的方法会改变Father.prototype上的
 		Son.prototype = new Father();
 	
 		首先, 原型是一个对象, 它是不能传参的, 所以原型继承不能传参
