@@ -1,6 +1,10 @@
 # 步骤: 
 安装ruby环境  --->  在ruby环境环境中安装sass  --->  安装sass的框架compass
 
+或者直接安装基于node的sass
+安装: npm i node-sass
+使用: 将sass命令换成node-sass, 其他命令一样
+
 ## 1. 安装ruby
 [安装ruby地址](https://rubyinstaller.org/downloads/ "ruby官网") <br>
 	在安装的时候，请勾选Add Ruby executables to your PATH这个选项，添加环境变量，不然以后使用编译软件的时候会提示找不到ruby环境 <br>
@@ -130,6 +134,18 @@ c.伪类嵌套
 	$width2: 200px;
 	.box {
 		width: (($width1 + $width2) - 10 * 2) / 2;
+	}
+	
+### 9.7 px转换成rem
+	// iphone6基准值
+	@function pxToRem($px) {
+		$rem : 37.5px;
+		@return ($px / $rem) + rem; 
+	}
+	
+	.box {
+		width: 	pxToRem(100px);
+		height: pxToRem(100px);
 	}
 
 
