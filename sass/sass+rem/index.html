@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minmum-scale=1.0,maxmum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+    <!-- 导航 -->
+    <header>
+        <ul class="header-content">
+            <li class="header-item">李雪</li>
+            <li class="header-item">小猪</li>
+            <li class="header-item">小胖猪</li>
+            <li class="header-item">小猪猪</li>
+            <li class="header-item">李胖雪</li>
+            <li class="header-item">小憨猪</li>
+        </ul>
+    </header>
+
+    <!-- 广告图 -->
+    <div class="banner-content">
+        <img class="banner" alt="图片加载失败" src="./img/top.jpg">
+        <p class="banner-title">李雪小猪猪节日快乐</p>
+    </div>
+
+    <!-- 正文 -->
+    <div class="news-content">
+        <img class="news-img" alt="图片加载失败" src="./img/love.jpg">
+        <p class="news-title">李雪</p>
+        <span class="time">2018-3-8</span>
+        <span class="info">天 | 日</span>
+    </div>
+    <div class="news-content">
+        <img class="news-img" alt="图片加载失败" src="./img/1.jpg">
+        <p class="news-title">我爱你</p>
+        <span class="time">2018-3-8</span>
+        <span class="info">地 | 月</span>
+    </div>
+    <div class="news-content">
+        <img class="news-img" alt="图片加载失败" src="./img/2.jpg">
+        <p class="news-title">生生世世</p>
+        <span class="time">2018-3-8</span>
+        <span class="info">为 | 可</span>
+    </div>
+    <div class="news-content">
+        <img class="news-img" alt="图片加载失败" src="./img/3.jpg">
+        <p class="news-title">亲爱的宝贝老婆</p>
+        <span class="time">2018-3-8</span>
+        <span class="info">证 | 鉴</span>
+    </div>
+
+    <script>
+        // 获取视口宽度(viewport)
+        var htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+
+        // 获取根元素html
+        var htmlDom = document.getElementsByTagName('html')[0];
+
+        // 设置html的font-size
+        htmlDom.style.fontSize = htmlWidth / 10 + 'px';
+
+        window.addEventListener('resize', function () {
+            var htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+            var htmlDom = document.getElementsByTagName('html')[0];
+            htmlDom.style.fontSize = htmlWidth / 10 + 'px';
+        });
+
+        // 随机颜色
+        function randomColor() {
+            return '#' + ('00000' + (Math.random() * 0x100000 << 0).toString(16)).slice(-6);
+        }
+
+        var title = document.getElementsByClassName('banner-title')[0];
+
+        setInterval(function () {
+            title.style.color = randomColor();
+        }, 1000);
+
+
+
+    </script>
+   
+
+</body>
+
+</html>
