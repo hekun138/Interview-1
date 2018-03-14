@@ -1,0 +1,107 @@
+header {
+  position: relative;
+  width: 100%;
+  height: 3.36rem;
+}
+header img:first-child {
+  float: left;
+}
+header img:nth-of-type(2) {
+  position: absolute;
+  left: 1.44rem;
+  top: 0.96rem;
+  z-index: 2;
+}
+header .info {
+  position: relative;
+  font-size: 12px;
+  width: 3.2533333333rem;
+  height: 0.96rem;
+  left: 4.8rem;
+  top: 0.9066666667rem;
+}
+header img:nth-of-type(3) {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+header .bg1 {
+  position: absolute;
+  width: 100%;
+  height: 0.5333333333rem;
+  left: 0;
+  top: 2.9333333333rem;
+  background: url("../img/bg1.png");
+}
+header .bg2 {
+  position: absolute;
+  width: 100%;
+  height: 0.5333333333rem;
+  left: 0;
+  top: 2.9333333333rem;
+  background: url("../img/bg2.png");
+}
+
+.bg3 {
+  width: 100%;
+  height: 0.1866666667rem;
+  background: url("../img/bg3.png");
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 14.88rem;
+  background: url("../img/containerBG.png");
+  overflow: hidden;
+}
+.container .list {
+  width: 6.4rem;
+  height: 1.3333333333rem;
+  margin: 0.2133333333rem auto;
+  box-sizing: border-box;
+}
+.container .list .item {
+  width: 1.9466666667rem;
+  height: 1.0933333333rem;
+  background: url("../img/nav.png");
+  float: left;
+  margin-right: 0.16rem;
+  font-size: 16px;
+  line-height: 1.0933333333rem;
+  text-align: center;
+}
+.container .product {
+  position: relative;
+  width: 6.4rem;
+  height: 6.6666666667rem;
+  margin: 0 auto;
+  padding-left: 0.2933333333rem;
+  box-sizing: border-box;
+}
+.container .product .title {
+  width: 5.8133333333rem;
+  height: 0.6933333333rem;
+  background: url("../img/title.png") no-repeat;
+}
+.container .product .title .left, .container .product .title .right {
+  position: absolute;
+  width: 0.2666666667rem;
+  height: 0.2933333333rem;
+  top: 0.1866666667rem;
+  background: url("../img/dingzi.png") no-repeat;
+}
+.container .product .title .left {
+  left: 0.5333333333rem;
+}
+.container .product .title .right {
+  right: 0.5333333333rem;
+}
+.container .product .title .info {
+  position: absolute;
+  font-size: 12px;
+  left: 2.56rem;
+  line-height: 0.6933333333rem;
+}
+
+/*# sourceMappingURL=index.css.map */

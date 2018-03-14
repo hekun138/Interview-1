@@ -1,5 +1,4 @@
 // 回调地狱
-// https://www.imooc.com/video/16611
 
 a(function (resultsFromA) {
     b(resultsFromA, function (resultsFromB) {

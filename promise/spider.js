@@ -1,5 +1,4 @@
 // 开发一个爬虫，爬取某网站。（半成品）
-// https://www.imooc.com/video/16624
 
 let url = ['http://blog.meathill.com/'];
 function fetchAll(urls) {

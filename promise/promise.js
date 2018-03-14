@@ -1,5 +1,4 @@
 // Promise的设计
-// https://www.imooc.com/video/16612
 
 new Promise(
     /* 执行器 executor */

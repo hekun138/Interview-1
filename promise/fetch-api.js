@@ -1,5 +1,4 @@
 // Fetch API
-// https://www.imooc.com/video/16630
 
 
 fetch('some.json')

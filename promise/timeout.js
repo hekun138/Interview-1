@@ -1,5 +1,4 @@
 // 简单的范例-定时执行
-// https://www.imooc.com/video/16613
 
 console.log('here we go');
 new Promise( resolve => {

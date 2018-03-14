@@ -1,5 +1,4 @@
 // 随堂小测试
-// https://www.imooc.com/video/16619
 // 假设doSomething和doSomethingElse返回的都是一个Promise实例
 // 原问题地址：http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html
 // 译文地址：http://fex.baidu.com/blog/2015/07/we-have-a-problem-with-promises/

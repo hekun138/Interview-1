@@ -1,5 +1,4 @@
 // 假如一个Promise已经完成了，再.then()会怎样？
-// https://www.imooc.com/video/16615
 
 
 console.log('start');

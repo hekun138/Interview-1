@@ -1,5 +1,4 @@
 // 异步操作的常见语法
-// https://www.imooc.com/video/16610
 
 // 事件侦听与响应
 document.getElementById('start').addEventListener('click', start, false);

@@ -1,5 +1,4 @@
 // 嵌套.then()
-// https://www.imooc.com/video/16618
 
 console.log('start');
 new Promise( resolve => {

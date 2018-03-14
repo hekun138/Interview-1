@@ -1,5 +1,4 @@
 // 遍历目录，找出最大的一个文件-通过Promise.all()和.map()
-// https://www.imooc.com/video/16622
 
 
 const fs = require('fs');

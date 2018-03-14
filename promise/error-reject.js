@@ -1,5 +1,4 @@
 // Promise会自动捕获内部异常，并交给rejected响应函数处理-reject响应捕获
-// https://www.imooc.com/video/16620
 
 console.log('here we go');
 new Promise( (resolve, reject) => {

@@ -1,5 +1,4 @@
 // Promise.resolve()
-// https://www.imooc.com/video/16625
 
 
 console.log('start');

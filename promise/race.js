@@ -1,5 +1,4 @@
 // Promise.race()
-// https://www.imooc.com/video/16627
 
 
 console.log('start');

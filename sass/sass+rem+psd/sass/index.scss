@@ -1,0 +1,132 @@
+@function pxToRem($px) {
+    $rem : 37.5px;
+    @return ($px / $rem) + rem;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: pxToRem(126px);
+
+    img:first-child {
+        float: left;
+    }
+
+    img:nth-of-type(2) {
+        position: absolute;
+        left: pxToRem(54px);
+        top: pxToRem(36px);
+        z-index: 2;
+    }
+
+    .info {
+        position: relative;
+        font-size: 12px;
+        width: pxToRem(122px);
+        height: pxToRem(36px);
+        left: pxToRem(180px);
+        top: pxToRem(34px);
+    }
+
+    img:nth-of-type(3) {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .bg1 {
+        position: absolute;
+        width: 100%;
+        height: pxToRem(20px);
+        left: 0;
+        top: pxToRem(110px);
+        background: url('../img/bg1.png');
+    }
+
+    .bg2 {
+        position: absolute;
+        width: 100%;
+        height: pxToRem(20px);
+        left: 0;
+        top: pxToRem(110px);
+        background: url('../img/bg2.png');
+    }
+}
+
+.bg3 {
+    width: 100%;
+    height: pxToRem(7px);
+    background: url('../img/bg3.png');
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: pxToRem(558px);
+    background: url('../img/containerBG.png');
+    overflow: hidden;
+
+    .list {
+        width: pxToRem(240px);
+        height: pxToRem(50px);
+        margin: pxToRem(8px) auto;
+        box-sizing: border-box;
+
+        .item {
+            width: pxToRem(73px);
+            height: pxToRem(41px);
+            background: url('../img/nav.png');
+            float: left;
+            margin-right: pxToRem(6px);
+            font-size: 16px;
+            line-height: pxToRem(41px);
+            text-align: center;
+        }
+    }
+
+    .product {
+        position: relative;
+        width: pxToRem(240px);
+        height: pxToRem(250px);
+        margin: 0 auto;
+        padding-left: pxToRem(11px);
+        box-sizing: border-box;
+
+        .title {
+            width: pxToRem(218px);
+            height: pxToRem(26px);
+            background: url('../img/title.png') no-repeat;
+
+            // 10 * 11
+            .left, .right {
+                position: absolute;
+                width: pxToRem(10px);
+                height: pxToRem(11px);
+                top: pxToRem(7px);
+                background: url('../img/dingzi.png') no-repeat;
+            }
+
+            .left {
+                left: pxToRem(20px);
+            }
+
+            .right {
+                right: pxToRem(20px);
+            }
+
+            .info {
+                position: absolute;
+                font-size: 12px;
+                left: pxToRem(96px);
+                line-height: pxToRem(26px);
+            }
+
+            
+        }
+
+
+    }
+    
+    
+}
+

@@ -1,5 +1,4 @@
 // Promise.reject()
-// https://www.imooc.com/video/16626
 
 
 let promise = Promise.reject('something wrong');

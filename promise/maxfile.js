@@ -1,5 +1,4 @@
 // 遍历目录，找出最大的一个文件
-// https://www.imooc.com/video/16611
 
 const fs = require('fs');
 const path = require('path');

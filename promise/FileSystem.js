@@ -1,5 +1,4 @@
 // 使用JS包装readFile
-// https://www.imooc.com/video/16628
 
 
 

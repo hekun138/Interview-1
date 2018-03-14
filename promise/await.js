@@ -1,6 +1,4 @@
 // async/await
-// https://www.imooc.com/video/16631
-
 
 function resolveAfter2Seconds(x) {
     return new Promise(resolve => {

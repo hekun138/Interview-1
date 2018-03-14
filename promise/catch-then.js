@@ -1,6 +1,4 @@
 // .catch() + .then()
-// https://www.imooc.com/video/16621
-
 
 
 console.log('here we go');

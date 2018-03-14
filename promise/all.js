@@ -1,7 +1,4 @@
 // 使用`Promise.all()`包装多个Promise实例
-// https://www.imooc.com/video/16634
-
-
 
 console.log('here we go');
 Promise.all([1, 2, 3])

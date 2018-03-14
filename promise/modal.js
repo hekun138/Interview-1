@@ -1,6 +1,4 @@
 // 把任何异步操作包装成Promise
-// https://www.imooc.com/video/16629
-
 
 // 弹出窗体
 let confirm = popupManager.confirm('您确定么？');
