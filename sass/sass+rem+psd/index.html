@@ -14,17 +14,23 @@
     
     <style>
         // ios plus
-        @media (max-device-width:414px) and (min-device-width:375px) {
+        @media screen (min-width:375px) and (max-width:414px) {
             .container .product .goods-content .goods-item img{
                 width: 1.61rem;
                 height: 1.65rem;
             }
+            body {
+                height: 3000px;
+            }
         }
         // 安卓机
-        @media (max-device-width:375px) and (min-device-width:320px) {
+        @media screen (min-width:320) and (max-width:375px) {
             .container .product .goods-content .goods-item img{
                 width: 1.86rem;
                 height: 1.89rem;
+            }
+            body {
+                height: 2000px;
             }
         }
     </style>
