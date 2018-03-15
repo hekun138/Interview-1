@@ -1,3 +1,9 @@
+// 获取像素比
+var pixelRatio = 1 / window.devicePixelRatio;
+
+// 动态设置视口(viewport)
+document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixelRatio+',minimum-scale='+pixelRatio+',maximum-scale='+pixelRatio+'" />');
+
 // 获取视口宽度
 var htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
 
