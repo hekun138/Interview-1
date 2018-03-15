@@ -76,13 +76,14 @@ header .bg2 {
   width: 6.4rem;
   height: 6.6666666667rem;
   margin: 0 auto;
-  padding-left: 0.2933333333rem;
   box-sizing: border-box;
 }
 .container .product .title {
   width: 5.8133333333rem;
   height: 0.6933333333rem;
   background: url("../img/title.png") no-repeat;
+  margin-left: 0.2933333333rem;
+  margin-bottom: 0.16rem;
 }
 .container .product .title .left, .container .product .title .right {
   position: absolute;
@@ -102,6 +103,33 @@ header .bg2 {
   font-size: 12px;
   left: 2.56rem;
   line-height: 0.6933333333rem;
+}
+.container .product .goods-content {
+  width: 100%;
+  height: 5.76rem;
+}
+.container .product .goods-content .goods-item {
+  position: relative;
+  width: 2.0266666667rem;
+  height: 2.1333333333rem;
+  float: left;
+  margin-right: 3px;
+  margin-bottom: 0.1066666667rem;
+  background: url("../img/goodsborder.png") no-repeat;
+}
+.container .product .goods-content .goods-item img {
+  position: absolute;
+  width: 1.7866666667rem;
+  height: 1.76rem;
+  left: 0.1066666667rem;
+  top: 0.2133333333rem;
+}
+.container .product .goods-content .price {
+  float: left;
+  width: 1.9733333333rem;
+  height: 0.32rem;
+  background: url("../img/price.png") no-repeat;
+  margin-bottom: 0.3466666667rem;
 }
 
 /*# sourceMappingURL=index.css.map */

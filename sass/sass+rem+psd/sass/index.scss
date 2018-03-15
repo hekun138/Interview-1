@@ -89,13 +89,14 @@ header {
         width: pxToRem(240px);
         height: pxToRem(250px);
         margin: 0 auto;
-        padding-left: pxToRem(11px);
         box-sizing: border-box;
 
         .title {
             width: pxToRem(218px);
             height: pxToRem(26px);
             background: url('../img/title.png') no-repeat;
+            margin-left: pxToRem(11px);
+            margin-bottom: pxToRem(6px);
 
             // 10 * 11
             .left, .right {
@@ -122,6 +123,38 @@ header {
             }
 
             
+        }
+
+        .goods-content {
+            width: 100%;
+            height: pxToRem(216px);
+
+            .goods-item {
+                position: relative;
+                width: pxToRem(76px);
+                height: pxToRem(80px);
+                float: left;
+                margin-right: 3px;
+                margin-bottom: pxToRem(4px);
+                background: url('../img/goodsborder.png') no-repeat;
+                
+                img {
+                    position: absolute;
+                    width: pxToRem(67px);
+                    height: pxToRem(66px);
+                    left: pxToRem(4px);
+                    top: pxToRem(8px);       
+                }
+            }
+
+            .price {
+                float: left;
+                width: pxToRem(74px);
+                height: pxToRem(12px);
+                background: url('../img/price.png') no-repeat;
+                margin-bottom: pxToRem(13px);
+            }
+
         }
 
 
