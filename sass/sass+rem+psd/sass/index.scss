@@ -129,6 +129,23 @@ header {
             width: 100%;
             height: pxToRem(216px);
 
+            .goods-box {
+                position: relative;
+                width: pxToRem(78px);
+                height: pxToRem(108px);
+                float: left;
+            }
+
+            .price {
+                position: relative;
+                font-size: 10px;
+                font-weight: bolder;
+                text-align: center;
+                width: pxToRem(78px);
+                height: pxToRem(12px);
+                background: url('../img/price.png') no-repeat;
+            }
+
             .goods-item {
                 position: relative;
                 width: pxToRem(76px);
@@ -145,14 +162,6 @@ header {
                     left: pxToRem(4px);
                     top: pxToRem(8px);       
                 }
-            }
-
-            .price {
-                float: left;
-                width: pxToRem(74px);
-                height: pxToRem(12px);
-                background: url('../img/price.png') no-repeat;
-                margin-bottom: pxToRem(13px);
             }
 
         }
