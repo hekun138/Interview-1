@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 函数既是变量, 也是对象
+        // 需要继承时使用new + 原型, 其他情况用return和new都可以
+
+        // 1. 函数
+        // function a() {
+        //     console.log(1);
+        // }
+        // a();
+        
+        // 2. 函数也是一个变量: 全局变量污染
+        // var a = function () {
+        //     console.log(1);
+        // };
+        // a(); // window.a()
+        
+        // 3. 普通对象: 函数写入对象中: 避免全局变量污染
+        // var obj = {
+        //     a : function () {
+        //         console.log(1);
+        //     }
+        // };
+        // obj.a();
+
+        // 4. 函数对象: 
+        // var obj = function () {};
+        // obj.a = function () {
+        //     console.log(1);
+        // }
+        // obj.a();
+
+        // 5. return: 返回一个新对象
+        // var obj = function () {
+        //     return {
+        //         a : function () {
+        //             console.log(1);
+        //         }
+        //     }
+        // };
+        // var newObj = obj();
+        // newObj.a();
+
+        // 6. new: 实例化一个新对象并返回
+        // var Obj = function () {
+        //     this.a = function () {
+        //         console.log(1);
+        //     }
+        // };
+        // var newObj = new Obj();
+        // newObj.a();
+
+        // 7. 原型: 写在构造函数中的方法每次new创建实例化对象的时候都会复制一份, 消耗性能, 而prototype上的方法是所有实例化对象共享的
+        // var Obj = function (name) {
+        //       // this定义的方法为实例化对象私有方法, 每次new的时候都会创建一次this定义的方法 
+        //       this.name = name;
+        // };
+        // 通过原型prototype继承的方法为公共方法, 每个对象都可以通过prototype访问到, 每次new的时候prototype上的方法不会再次被创建
+        // Obj.prototype = {
+        //     a : function () {
+        //         console.log(1);
+        //     }
+        // };
+        // var newObj = new Obj(); 
+        // newObj.a();
+
+        // 8. 链式调用
+        // var Obj = function () {};
+        // Obj.prototype = {
+        //     a : function () {
+        //         console.log(1);
+        //         return this;
+        //     },
+        //     b : function () {
+        //         console.log(2);
+        //         return this;
+        //     }
+        // };
+        // var newObj = new Obj();
+        // newObj.a().b();
+
+        // 9. 链式添加
+        var Obj = function () {};
+        Obj.prototype = {
+            addMethod : function (name, fn) {
+                this[name] = fn;
+                return this;
+            }
+        };
+        var newObj = new Obj();
+        // 链式添加
+        newObj.addMethod('a', function () {
+            console.log(1);
+            return this;
+        }).addMethod('b', function () {
+            console.log(2);
+            return this;
+        });
+        // 链式调用
+        newObj.a().b();
+
+    
+    </script>
+
+</body>
+</html>
