@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <input id="input" type="text" value="0" />
+    
+    <button id="btn">+</button>
+    
+    <script>
+
+        var input = document.getElementById('input'),
+            btn = document.getElementById('btn');
+
+        btn.onclick = function () {
+            input.value++;
+        };
+    
+        // 装饰已有的功能对象
+        // 1. 装饰者---给指定元素新增操作
+        var decorator =  function(dom, type, fn) {
+            // 若事件源已经绑定事件
+            if (typeof dom[type] === 'function') {
+                // 缓存事件源原有回调函数
+                var oldClickFn = dom[type];
+                // 为事件源定义新的事件
+                dom[type] = function () {
+                    // 事件源原有回调函数
+                    oldClickFn();
+                    // 执行事件源新增回调函数
+                    fn();
+                }
+            } else {
+                // 事件源未绑定事件, 直接为事件源添加新增回调函数
+                dom[type] = fn;
+            }
+        }
+        // btn调用
+        decorator(btn, 'onclick', function () {
+            console.log('使用装饰者给指定元素新增事件click');
+        });
+        // input调用
+        decorator(input, 'onfocus', function () {
+            console.log('使用装饰者给指定元素新增事件focus');
+        });
+        decorator(input, 'onblur', function () {
+            console.log('使用装饰者给指定元素新增事件blur');
+        });
+
+        
+        
+
+
+    
+    
+    </script>
+
+</body>
+</html>
