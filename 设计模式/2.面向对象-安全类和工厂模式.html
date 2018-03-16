@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <span>1</span>
+    <button>弹窗按钮</button>
+    <button>日志按钮</button>
+    <button>+</button>
+    <button>-</button>
+    
+    <script>
+        // 1. 安全类
+        // function Obj(type) {
+        //     if (this instanceof Obj) {
+        //         return this[type]();
+        //     } else {
+        //         return new Obj(type);
+        //     }
+        // }
+
+        // Obj.prototype = {
+        //     a : function () {
+        //         console.log(1);
+        //     },
+        //     b : function () {
+        //         console.log(2);
+        //     }
+        // };
+
+        // var newObj = Obj('a');
+
+        // 2. 创建一个按钮工厂类
+        function btnClass(type, btn) {
+            if (this instanceof btnClass) {
+                return new this[type];
+            } else {
+                return new btnClass(type);
+            }
+        }
+
+        btnClass.prototype = {
+            alertBtn : function () {
+                alert('弹窗按钮');
+            },
+            consoleBtn : function () {
+                console.log('日志按钮');
+            },
+            addBtn : function () {
+                document.getElementsByTagName('span')[0].innerText++
+            },
+            minusBtn : function () {
+                document.getElementsByTagName('span')[0].innerText--
+            }
+        };
+
+        var arr = ['alertBtn', 'consoleBtn', 'addBtn', 'minusBtn'],
+            btn = document.getElementsByTagName('button');
+        Array.prototype.map.call(btn, function (a, i) {
+            a.addEventListener('click', function () {
+                btnClass(arr[i])
+            }, false);
+        });
+
+
+
+
+    
+        
+    
+    </script>
+
+</body>
+</html>
