@@ -1,8 +1,34 @@
-# 1. 定位(position)
-    relative: 相对定位, 没有脱离文档流 
-    absolute: 绝对定位, 脱离文档流, 向外层查找父元素, 遇到的第一个position: relative;的元素为父元素, 以该父元素的原点为(0,0)定位 
-    fixed: 固定定位, 脱离文档流 
-    inherit: 继承父元素的position 
+# 1. 浮动 和 定位
+	浮动(float)
+		浮动的框可以向左或向右移动, 脱离文档流
+		float: left;
+		float: right;
+	清浮动(clear)
+		clear属性规定元素的哪一侧不允许其他浮动元素
+		clear: left;
+		clear: right;
+		clear: both;
+		
+		常用清浮动class:
+			.clearfloat {
+				zoom: 1;
+			}
+
+			.clearfloat {
+				display: block;
+				clear: both;
+				content: "";
+				visibility: hidden;
+				height: 0;
+			}
+ 
+	定位(position) 
+		relative: 相对定位, 没有脱离文档流 
+		absolute: 绝对定位, 脱离文档流, 向外层查找父元素, 遇到的第一个position: relative;的元素为父元素, 以该父元素的原点为(0,0)定位 
+		fixed: 固定定位, 脱离文档流 
+		inherit: 继承父元素的position 
+	
+	
 
 # 2. 居中
 
