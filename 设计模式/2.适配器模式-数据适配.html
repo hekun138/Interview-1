@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        // 适配器模式: 让两个接口兼容的中间接口
+        // 作用: 适配两种代码库中不兼容的代码
+
+        // 1. 框架的中间接口
+        // var A = A || {};
+        // A.g = function (id) {
+        //     return document.getElementById(id);
+        // };
+        // A.on = function (id, type, fn) {
+        //     // 传入的参数为string就以id处理, 否则以元素处理
+        //     var dom = typeof id === 'string' ? this.g(id) : id;
+        //     if (dom.addEventListener) {
+        //         dom.addEventListener(type, fn, false); // 标准浏览器
+        //     } else if (dom.attachEvent) {
+        //         dom.attachEvent('on' + type, fn); // 低版本IE浏览器
+        //     } else {
+        //         dom['on' + type] = fn; // 其他浏览器
+        //     }
+        // };
+
+        // A.on(window, 'load', function () {
+        //     A.on('btn', 'click', function () {
+
+        //     });
+        // });
+
+        // // 将A框架的g和on方法使用适配器模式接口转换成jquery的方法
+        // A.g = function (id) {
+        //     return $(id).get(0);
+        // }
+
+        // A.on = function (id, type, fn) {
+        //     var dom = typeof id === 'string' ? $('#' + id) : $(id);
+        //     dom.on(type, fn);
+        // }
+
+        // 2. 数据适配
+        var arr = ['小明', 20, '20000', '2018-3-13'];
+        // 中间接口
+        function arrToObj(arr) {
+            return {
+                name : arr[0],
+                age : arr[1],
+                price : arr[2],
+                date : arr[3],
+            }
+        }
+        // 数据转换 arr ---> obj
+        var obj = arrToObj(arr);
+
+        console.log(obj);
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
