@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" style="color: red;background-color: green;font-size: 16px;">测试按钮</button>
+    
+    <script>
+        // 外观模式, 为一组复杂的子系统提供一个更高级的统一接口, 通过这个接口使得对子系统接口更容易访问
+        // 即 简化底层接口复杂性
+
+        // 1. 监听事件兼容性
+        function addEvent(dom, type, fn) {
+            if (dom.addEventListener) {
+                dom.addEventListener(type, fn, false); // 标准浏览器
+            } else if(dom.attachEvent) {
+                dom.attachEvent('on' + type, fn); // 低版本IE浏览器
+            } else {
+                dom['on' + type] = fn; // 其他浏览器
+            }
+        }
+
+        // 2. 获取事件对象兼容性
+        function getEvent(e) {
+            // e: 标准浏览器   window.event: IE
+            return e || window.event;
+        }
+
+        // 3. 获取元素
+        function getTarget(e) {
+            var e = getEvent(e);
+            // e.target: 标准浏览器      e.srcElement: IE
+            return e.target || e.srcElement;
+        }
+
+        // 4. 阻止默认行为
+        function preventDefault(e) {
+            var e = getEvent(e);
+            // 标准浏览器
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                // IE浏览器
+                e.returnValue = false;
+            }
+        }
+
+        var btn = document.getElementsByTagName('button')[0];
+        addEvent(document, 'click', function (e) {
+            // preventDefault(e);
+            console.log(getEvent(e));
+            console.log(getTarget(e));
+            
+        });
+
+        // 简约版属性样式方法库
+        var A = {
+            g : function (id) {
+                return document.getElementById(id);
+            },
+            //设置样式
+            css : function (id, key, value) {
+                document.getElementById(id).style[key] = value;
+            },
+            // 获取样式
+            getStyle : function (id, key) {
+                var ele = document.getElementById(id),
+                    result;
+                return result = window.getComputedStyle ? window.getComputedStyle(ele, false)[key] : ele.currentStyle[key];
+            },
+            // 设置属性
+            attr : function (id, key, value) {
+                document.getElementById(id)[key] = value;
+            },
+            html : function (id, html) {
+                document.getElementById(id).innerHTML = html;
+            },
+            on : function (id, type, fn) {
+                document.getElementById(id)['on' + type] = fn;
+            }
+        }
+        
+        console.log(A.getStyle('btn', 'color'));
+        console.log(A.getStyle('btn', 'background-color'));
+        console.log(A.getStyle('btn', 'font-size'));
+    
+    </script>
+
+
+</body>
+</html>
