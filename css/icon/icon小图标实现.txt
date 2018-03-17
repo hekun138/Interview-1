@@ -32,7 +32,7 @@
 					format 给对应字体(.eot .woff .ttf .svg) 自定义字体格式
 				*/
 				src: url("../fonts/icomoon.eot"); /* IE9 兼容模式 */
-				src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype")
+				src: url("../fonts/icomoon.eot?") format("embedded-opentype")
 					 ,url("../fonts/icomoon.woff") format("woff")
 					 ,url("../fonts/icomoon.ttf") format("truetype")
 					 ,url("../fonts/icomoon.svg") format("svg");
