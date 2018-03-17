@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+.box {
+    width: 408px;
+    margin: 50px auto;
+}
+.box li {
+    float: left;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    border: 1px solid grey;
+}
+
+/* 导入icon字体文件 */
+@font-face {
+    /* 自定义字体名称 */
+    font-family: icomoon-icons;
+    /* 
+        url 自定义字体路径
+        format 给对应字体(.eot .woff .ttf .svg) 自定义字体格式
+    */
+    src: url('../fonts/icomoon.eot');   /* IE9 */
+    src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),  /* .eot?  为了兼容IE6-8 ?号后面的iefix没什么用 */
+    url('../fonts/icomoon.woff') format('woff'),
+    url('../fonts/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon.svg') format('svg');
+    /* 字体粗细正常 */
+    font-weight: normal;
+    /* 字体样式正常 */
+    font-style: normal;
+}
+
+.my-icon {
+    font-family: icomoon-icons;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 64px;
+}
+
+/* 伪类实现icon */
+.css-icon1:before {
+    content: '\e957';
+    font-family: icomoon-icons;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 64px;
+}
+
+.css-icon2:before {
+    content: '\e96c';
+    font-family: icomoon-icons;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 64px;
+}
+
+.css-icon3:before {
+    content: '\e96d';
+    font-family: icomoon-icons;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 64px;
+}
+
+.css-icon4:before {
+    content: '\e96b';
+    font-family: icomoon-icons;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 64px;
+}
+
+
