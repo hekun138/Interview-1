@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* #canvas {
+            display: block;
+            margin: 0 auto;
+            position: absolute;
+            right: 50px;
+            top: 20px;
+            z-index: 100;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- 移动端H5图片上传的那些坑:  https://segmentfault.com/a/1190000006140042 -->
+    <!-- 图片上传插件  http://fex.baidu.com/webuploader/getting-started.html -->
+
+    <!-- 
+        移动端上传图片步骤:
+            1. 利用FileReader, 读取blob对象, 或者是file对象, 将图片转化为data uri的形式
+            2. 使用canvas, 在页面上新建一个画布, 利用canvas提供的API, 将图片画入这个画布当中
+            3. 利用canvas.toDataURL(), 进行图片的压缩, 得到图片的data uri的值
+            4. 上传文件
+    -->
+
+    <!-- multiple 可以让用户选择多个文件 -->
+    <!-- accept   属性只能与 <input type="file"> 配合使用。它规定能够通过文件上传进行提交的文件类型。
+                  accept="image/*" 表示不限制图像的格式
+    -->
+    <input type="file" accept="image/*" multiple id="uploadInput" />
+    <img src="" height="200" alt="Image preview...">
+    <canvas id="canvas" width="300" height="150" style="border:1px solid #d3d3d3;"></canvas>
+
+    <script src="js/jquery-min.js"></script>
+    <script>
+        // 获取上传文件input
+        var uploadInput = document.getElementById('uploadInput');
+        // 图片大小大于200K, 就要进行压缩后再上传
+        var maxSize = 200 * 1024;   // 200KB
+
+        //创建canvas元素
+        var canvas = document.getElementById('canvas'),
+            context = canvas.getContext('2d');
+
+        // 给Input添加上传文件事件
+        uploadInput.addEventListener('change', uploadFile, false);
+
+        // 获取img元素
+        var preview = document.querySelector('img');
+
+        // 浏览器读取本地文件
+        function uploadFile(input) {
+            // 保存 uploadInput 节点, 以便和 FileReader等对象的this区分
+            var _this = this;
+            //支持chrome IE10
+            if (window.FileReader) {
+                // 读取本地文件, 里面包含文件的最后修改时间, 文件名, 文件大小, 文件类型等参数
+                var file = _this.files[0];
+                // 获取文件名
+                filename = file.name.split(".")[0];
+                // 创建一个FileReader对象, 该对象允许Web应用程序异步读取存储在用户计算机上的文件
+                var reader = new FileReader();
+                // 该事件在读取文件操作完成时触发
+                reader.onload = function () {
+                    // this.result为data url的形式
+                    var result = this.result;
+                    // 显示上传的图片
+                    preview.src = result;
+                    // 文件小于200K
+                    if (result.length < maxSize) {
+                        // 图片直接上传
+                        imgUpload(result);
+                    } else {
+                        // 文件大于200K, 先压缩图片
+                        getBase64(result, function (dataURL) {
+                            // 上传图片    
+                            imgUpload(dataURL);
+                        }); 
+                    }
+
+                }
+                // readAsText(result)方法用于读取文本文件  在onload读取文件结束后, 返还onload一个字符串, 该字符串表示所读取的文件内容
+                // readAsDataURL(result)方法用于读取图片文件  返还给onload事件一个 data: URL 格式字符串表示读取文件的内容
+                reader.readAsDataURL(file);
+            }
+            //支持IE 7 8 9 10
+            else if (typeof window.ActiveXObject != 'undefined') {
+                var xmlDoc;
+                xmlDoc = new ActiveXObject('Microsoft.XMLDOM');
+                xmlDoc.async = false;
+                xmlDoc.load(_this.value);
+                alert(xmlDoc.xml);
+            }
+            //支持FF
+            else if (document.implementation && document.implementation.createDocument) {
+                var xmlDoc;
+                xmlDoc = document.implementation.createDocument('', '', null);
+                xmlDoc.async = false;
+                xmlDoc.load(_this.value);
+                alert(xmlDoc.xml);
+            } else {
+                alert('error');
+            }
+        }
+
+
+
+        // 图片压缩
+        function getBase64(url, callback) {
+            // 回调用于图片压缩完后返回数据
+            var callback =  callback || function () {};
+            var result = '';
+            //通过构造函数来创建的 img 实例，在赋予 src 值后就会立刻下载图片，相比 createElement() 创建 <img> 省去了 append()，也就避免了文档冗余和污染
+            var image = new Image(),
+                dataURL = '';
+            image.src = url;
+            image.onload = function () { //要先确保图片完整获取到，这是个异步事件
+                //确保canvas的尺寸和图片一样
+                width = image.width;
+                height = image.height;
+                canvas.width = width;
+                canvas.height = height;
+
+                context.fillRect(20,20,150,100);
+
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.save();
+                //将图片绘制到canvas中
+                context.drawImage(image, 0, 0, canvas.width, canvas.height);
+                context.restore();
+
+                //转换图片为dataURL
+                dataURL = canvas.toDataURL('image/jpeg', 0.2);
+                // 返还压缩后的图片
+                callback(dataURL);
+            };
+        }
+
+        // 图片上传
+        function imgUpload(img) {
+            console.log(img);
+            $.ajax({
+                type: 'POST',
+                url: './images',
+                async: false,
+                data: {
+                    image : img
+                },
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
