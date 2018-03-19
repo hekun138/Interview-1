@@ -191,22 +191,22 @@
 		总结: 拥有以上三个继承所有的优点, 并且解决了构造函数方法继承了两次的问题
 
 ### 8. 判断的5种实现方法
-[demo链接](https://github.com/l511407563/Interview/blob/master/javascript/判断的5种实现方式.html)	<br>
+[demo链接](https://github.com/l511407563/Interview/blob/master/javascript/判断的5种实现方式.html)
 
 	if else
 	switch case
 	三目运算 ? :
 	与或非 && ||
 	对象 {}[]
-if判断 
+##### if判断 <br>
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/判断1.png)	<br>
-switch判断
+##### switch判断 <br>
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/判断2.png)	<br>
-三目运算
+##### 三目运算 <br>
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/判断3.png)	<br>
-与或非
+##### 与或非 <br>
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/判断4.png)	<br>
-对象 
+##### 对象  <br>
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/判断5.png)	<br>
 
 		
