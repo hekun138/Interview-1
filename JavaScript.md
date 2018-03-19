@@ -192,11 +192,12 @@
 
 ### 8. 判断的5种实现方法
 [demo链接](https://github.com/l511407563/Interview/blob/master/javascript/判断的5种实现方式.html)	<br>
-		if else
-		switch case
-		三目运算 ? :
-		与或非 && ||
-		对象 {}[]
+
+	if else
+	switch case
+	三目运算 ? :
+	与或非 && ||
+	对象 {}[]
 if判断 
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/判断1.png)	<br>
 switch判断
