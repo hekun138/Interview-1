@@ -211,6 +211,7 @@
 
 ### 9. 缓存
 各种缓存以及各自对数据的存、取、清除等方法
+
 	1. sessionStorage
 		优点: 临时存储神器, 关闭页面标签自动回收, 不可以跨页面交互
 		缺点: 临时, 不能存储持久化数据
@@ -252,8 +253,11 @@
 		优点: 相当于一个完整的数据库, 功能最强大, 没有什么它做不了的事情
 		缺点: 对于前端学习成本高
 		兼容性: 标准浏览器
+##### sessionStorage
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/sessionStorage.png)	<br>
+##### localStorage
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/localStorage.png)	<br>
+##### IndexDB
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/IndexDB.png)	<br>
 	
 	
