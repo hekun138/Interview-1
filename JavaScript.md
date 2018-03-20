@@ -209,6 +209,71 @@
 ##### 对象  <br>
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/判断5.png)	<br>
 
+### 9. 缓存
+各种缓存以及各自对数据的存、取、清除等方法
+	1. sessionStorage
+		优点: 临时存储神器, 关闭页面标签自动回收, 不可以跨页面交互
+		缺点: 临时, 不能存储持久化数据
+		兼容性: 标准浏览器和高版本IE
+		存:
+			sessionStorage.setItem("key", "value");
+		取:
+			sessionStorage.getItem("key");
+			sessionStorage.key;
+		清除:
+			sessionStorage.clear();
+	
+	2. localStorage	
+		优点: 兼容性中等, 操作简单, key-value形式
+		缺点: 存在大小限制以及兼容性问题
+		兼容性: IE10及其以下不兼容
+		存:
+			localStorage.setItem("key", "value");
+		取:
+			localStorage.getItem("key");
+			localStorage.key;
+		清除:
+			localStorage.clear();
+			
+	3. userData
+		缺点: 
+			信任站点与不信任站点大小限制不一样
+			信任站点: 存储限制太小, 单个文件限制128KB, 一个域名下总共可以保存1024KB的文件
+			受限站点: 单个文件限制64KB, 一个域名下总共可以保存640KB的文件
+		兼容性: IE专用缓存
+			
+	4. Cookie
+		优点: 
+		缺点: 大小有限制, 每次发送请求, 都会加在请求头里发给服务器, 如果cookie大了, 那么就会非常耗费性能
+		
+		兼容性: 兼容性最好的本地存储, 几乎所有的浏览器都支持
+
+	5. openDatabase(IndexDB)
+		优点: 相当于一个完整的数据库, 功能最强大, 没有什么它做不了的事情
+		缺点: 对于前端学习成本高
+		兼容性: 标准浏览器
+![](https://github.com/l511407563/Interview/blob/master/javascript/image/sessionStorage.png)	<br>
+![](https://github.com/l511407563/Interview/blob/master/javascript/image/localStorage.png)	<br>
+![](https://github.com/l511407563/Interview/blob/master/javascript/image/IndexDB.png)	<br>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
 		
 
 
