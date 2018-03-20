@@ -244,10 +244,10 @@
 			受限站点: 单个文件限制64KB, 一个域名下总共可以保存640KB的文件
 		兼容性: IE专用缓存
 			
-	4. Cookie
+	4. cookie
+		注: chrome浏览器的控制台中无法打印出cookie, 在ie和ff可以
 		优点: 
 		缺点: 大小有限制, 每次发送请求, 都会加在请求头里发给服务器, 如果cookie大了, 那么就会非常耗费性能
-		
 		兼容性: 兼容性最好的本地存储, 几乎所有的浏览器都支持
 
 	5. openDatabase(IndexDB)
@@ -258,6 +258,8 @@
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/sessionStorage.png)	<br>
 ##### localStorage
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/localStorage.png)	<br>
+##### cookie
+![](https://github.com/l511407563/Interview/blob/master/javascript/image/cookie.png)	<br>
 ##### IndexDB
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/IndexDB.png)	<br>
 	

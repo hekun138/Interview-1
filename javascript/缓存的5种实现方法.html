@@ -43,6 +43,27 @@
         // 3. userData
 
         // 4. cookie
+        // 存
+        // function setCookie(name, value, days) {
+        //     var date = new Date();
+        //     date.setDate(date.getDate() + days);
+        //     document.cookie = name + '=' + value + ';expires=' + date;
+        // }
+        // // 取
+        // function getCookie(name) {
+        //     var arr = document.cookie.replace(/\s/g, "").split(';');
+        //     for (var i = 0; i < arr.length; i++) {
+        //         var tempArr = arr[i].split('=');
+        //         if (tempArr[0] == name) {
+        //             return decodeURIComponent(tempArr[1]);
+        //         }
+        //     }
+        //     return '';
+        // }
+        // // 清空  不能直接删除cookie, 需要给cookie添加过期时间
+        // function removeCookie(name) {
+        //     setCookie(name, '1', -1);
+        // }
 
         /* 5. openDatabase(IndexDB)
         * @openDatabase：这个方法使用现有数据库或创建新数据库创建数据库对象。
@@ -166,10 +187,6 @@
         openData.delete();
         // 查询
         openData.query();
-
-
-
-
     </script>
 </body>
 
