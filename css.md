@@ -132,6 +132,45 @@
 [demo](https://github.com/l511407563/Interview/blob/master/css/icon) <br>
 ![](https://github.com/l511407563/Interview/blob/master/css/icon/demo.png) <br>
 
+# 8. 文本超出显示省略号
+	单行文本超出显示省略号 兼容所有浏览器
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	
+	多行文本超出显示省略号
+	div {
+		display: block;
+		width: 100px;
+		height: 60px;
+		/* ...这里添加relative */
+		position: relative;
+
+		/* 多行文本超出显示省略号 */
+		overflow: hidden;
+		text-overflow: ellipsis;
+		/* chrome */
+		display: -webkit-box;
+		/* 表示第几行后面出现省略符号 */
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+
+		/* 兼容IE和FF */
+		display: -moz-box;
+		-moz-line-clamp: 2 !important;
+		-moz-box-orient: vertical;
+		font-size: 14px;
+	}
+	/* 兼容IE和FF */
+	div:after {
+		background: linear-gradient(to right, rgba(255, 255, 255, 0), #FFFFFF 50%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+		bottom: 0;
+		content: "...";
+		padding: 0 5px 1px 30px;
+		position: absolute;
+		right: 0;
+	}
+
 
 
 
