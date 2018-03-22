@@ -262,11 +262,27 @@
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/cookie.png)	<br>
 ##### IndexDB
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/IndexDB.png)	<br>
+
+### 10. 定时器与requestAnimationFrame
+[demo链接](https://github.com/l511407563/Interview/blob/master/javascript/定时器animation传参方式.html) <br>
+
+	setTimeout(callback, time)	延时器
+	clearTimeout()	清除延时器
 	
+	setInterval(callback, time)	循环器
+	clearInterval()	清除循环器
 	
+	requestAnimationFrame(callback)	
+	cancelAnimationFrame()
 	
+	知识点(都在demo里):
+		1. 如何给requestAnimationFrame的回调函数传参
+		2. 如何清除requestAnimationFrame
+		3. 兼容性处理
 	
-	
+##### 给requestAnimationFrame
+![](https://github.com/l511407563/Interview/blob/master/javascript/image/定时器与requestAnimationFrame.png)	<br>
+
 	
 	
 	
