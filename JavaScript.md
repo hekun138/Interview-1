@@ -210,7 +210,7 @@
 ![](https://github.com/l511407563/Interview/blob/master/javascript/image/判断5.png)	<br>
 
 ### 9. 缓存
-[demo链接](https://github.com/l511407563/Interview/blob/master/javascript/缓存的5种实现方式.html) <br>
+[demo链接](https://github.com/l511407563/Interview/blob/master/javascript/缓存的5种实现方法.html) <br>
 各种缓存以及各自对数据的存、取、清除等方法
 
 	1. sessionStorage
