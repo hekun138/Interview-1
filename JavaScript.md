@@ -191,7 +191,7 @@
 		总结: 拥有以上三个继承所有的优点, 并且解决了构造函数方法继承了两次的问题
 
 ### 8. 判断的5种实现方法
-[demo链接](https://github.com/l511407563/Interview/blob/master/javascript/判断的5种实现方式.html)
+[demo链接](https://github.com/l511407563/Interview/blob/master/javascript/判断的5种实现方法.html)
 
 	if else
 	switch case
