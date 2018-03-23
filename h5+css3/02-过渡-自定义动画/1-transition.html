@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TZ-追梦</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        .box{
+            width: 300px;
+            height: 150px;
+            margin: 100px auto;
+            background: pink;
+            /*-webkit-transition: 5s ;  !*谷歌*!
+            -moz-transition: 5s ;   !*火狐*!
+            -ms-transition: 5s ;  !*微软*!
+            -o-transition: 5s ;  !*欧朋*!
+            transition: 5s ;  !* 标准写法 *!*/
+            transition: opacity 5s ease-in,background 5s 2s;
+            /*transition: all 5s; 默认是all */
+            transition: 5s linear;
+            transition: 5s cubic-bezier(.43,-0.64,.53,1.55);
+            /*加了过渡 意味着 所有的属性都有机会过渡*/
+            /*高雅的叫法
+                渐进境强    上面的写法
+                    做项目的时候 考虑到ie678的用户
+                        就只用基础技术
+                        后期再向升级
+                优雅降级
+                    高端人群
+                        定位 用最新前沿的技术
+                    降低档次
+                 transition: 5s ;
+                 -o-transition: 5s ;
+                 -ms-transition: 5s ;
+                 -moz-transition: 5s ;
+                 -webkit-transition: 5s ;
+
+                 正常情况 下 都是用复合属性 附在特殊情况 下才拆分写
+            */
+            opacity: 1;
+        }
+        .box:hover{
+            background: red;
+            opacity: 0.2; /* 元素的opacity 不仅颜色透明而且 元素的内容 也要送 透明 */
+                /*如果 只想改变 背景颜色而不改变元素的内容透明，那就用 rgba*/
+        }
+        body:hover .box{
+            /*display: none;*/
+            /*opacity: 0.1;*/
+        }
+    </style>
+</head>
+<body>
+    <!--transition:
+        过渡
+            改变元素的位置或属性 需要有个时间的持续的过程-->
+    <div class="box"></div>
+</body>
+</html>

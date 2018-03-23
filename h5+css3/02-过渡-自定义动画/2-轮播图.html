@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TZ-追梦</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        li{
+            list-style: none;
+        }
+        img{
+            vertical-align: top;
+        }
+        div{
+            width: 980px;
+            height: 500px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        ul{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 500%;
+            height: 100%;
+            transition: 1s cubic-bezier(.37,-0.59,.7,1.55);
+        }
+        ul li{
+            float: left;
+            width: 980px;
+            height: 100%;
+        }
+        ol{
+            position: absolute;
+            right: 50px;
+            bottom: 20px;
+            width: 300px;
+            height: 60px;
+
+        }
+        ol li{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul id="list">
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+            <li><img src="images/5.jpg" alt=""></li>
+        </ul>
+        <ol>
+            <li><img src="images/11.jpg" alt=""></li>
+            <li><img src="images/22.jpg" alt=""></li>
+            <li><img src="images/33.jpg" alt=""></li>
+            <li><img src="images/44.jpg" alt=""></li>
+            <li><img src="images/55.jpg" alt=""></li>
+        </ol>
+    </div>
+    <script>
+        var oLi = document.querySelectorAll('ol li');
+        var list = document.querySelector('#list');
+       /* oLi.forEach((item,i)=>{
+            item.onclick = ()=>{
+                list.style.left = -i*980 +'px';
+            }
+        })*/
+
+        for( var k=0;k<oLi.length;k++ ){
+            oLi[k].index = k;
+            oLi[k].onclick = function(){
+                list.style.left = -(this.index)*980 +'px';
+            }
+        }
+    </script>
+</body>
+</html>

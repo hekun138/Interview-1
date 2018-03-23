@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background: red;
+            animation: play 1s steps(1);
+            /* 线性的变化 */
+            / * 帧动画 */
+        }
+        @keyframes play {
+            0%{ background: red }
+            30%{ background: blue }
+            60%{ background: purple }
+            90%{ background: black }
+            100%{ background: red }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TZ-追梦</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        body{
+            background: #15131E;
+        }
+        div{
+            display: flex;
+            margin: auto;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .box>div{
+            width: 200px;
+            height: 200px;
+        }
+        .box>div>div{
+            width: 100px;
+            height: 100px;
+        }
+        .box>div>div>div{
+            width: 0;
+            height: 0px;
+        }
+        p{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 150px;
+            border-radius:50% 50% 0 0 /100% 100% 0 0;
+            background: linear-gradient(
+                    142deg,
+                    rgba(255,255,255,0.8) 0%,
+                    rgba(0,0,0,0.02) 70%,
+                    transparent 100%
+            );
+            transform-origin: center bottom;
+
+        }
+        .on{
+            animation: play 5s linear infinite;
+        }
+        @keyframes play {
+            /*0% { transform: rotate(0deg) }
+            100% { transform: rotate(360deg) }*/
+            from{
+                transform: rotate(0deg)
+            }
+            to{
+                transform: rotate(360deg)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <div>
+                <div>
+                    <p class="on"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
