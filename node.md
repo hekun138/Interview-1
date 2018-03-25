@@ -87,10 +87,6 @@ Node 常用模块
 		res.json() 响应json数据
 		// 响应结束
 		res.end()
-		// 发送cookie	名称, 数据, 过期时间
-		res.cookie('cookie名称', {数据}, {maxAge: 1000*60*60*24})
-		// 获取cookie	需要设置cookie-parser模块
-		req.cookies 
 		// next	跳出该函数继续往下执行
 		next()
 	})  
@@ -124,7 +120,52 @@ Node 常用模块
 	app.use(bodyParser.urlencoded({ extended:true }));
 	
 5. cookie-parser模块   用于获取cookie
-	app.use(cookieParser('asdadawas')); // 密钥
+	var cookieParser = require('cookie-parser');
+	app.use(cookieParser('cookieName')); 	// 密钥
+	// 1. 设置cookie
+	// 发送cookie	名称, 数据, 过期时间
+	res.cookie('cookieName', {cookie数据}, {maxAge: 1000*60*60*24})
+	// 2. 获取前台发送的cookie
+	req.cookies['cookieName'];
+	// 3. 清空cookie
+	res.clearCookie('cookieName'); 
+	// 4. 网址重定向
+	res.redirect('/');	
+	
+6. 爬虫	(http模块 或者 https模块)
+	意义: 相当于服务器上的ajax, 用于服务器去请求它需要的一些数据
+	第一种 http.get(url, callback);
+		http.get(url, (res) => {	
+			// 请求图片的时候设置二进制数据
+			res.setEncoding('binary');
+			// 请求有数据时触发
+			res.on('data', (data) => {
+				// 处理请求到的数据
+			}
+			// 当请求完成时触发
+			res.on('end', (data) => {
+				// 请求完成后的事件
+				// 如果是图片的话和普通请求不一样, 通过爬虫获取的二进制数据保存为本目录下的1.png
+				fs.writeFile('./1.png',img,'binary')
+			}
+		});
+	
+	第二种	http.get(options, callback);
+		例如: http://nodejs.cn/api/
+		options = {
+			// 请求的主域名
+			hostname: 'nodejs.cn',
+			// 主域名之后
+			path: '/api/',
+			// 端口号
+			port: '80',
+			headers: {
+				// 设置编码格式
+				'Content-Length':'utf-8'
+			}
+		};
+		
+	
 	
 	
 
