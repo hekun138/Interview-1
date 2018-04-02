@@ -3,18 +3,18 @@
 
 2. node环境中使用sass
 
-	1. 安装
-		npm i --save-dev sass-loader
+	1. 安装 <br>
+		npm i --save-dev sass-loader <br>
 		npm i --save-dev node-sass
-	2. 配置
-		在build目录下的 webpack.base.conf.js的rules里面添加
+	2. 配置 <br>
+		在build目录下的 webpack.base.conf.js的rules里面添加 <br>
 		{
 		  test: /\.sass$/,
 		  loaders: ['style', 'css', 'sass']
 		}
-	3. 在APP.vue中修改style标签
+	3. 在APP.vue中修改style标签 <br>
 		<style lang='scss'>
-	4. vscode中 vue 的scss显示语法错误, 但是webpack正常编译
+	4. vscode中 vue 的scss显示语法错误, 但是webpack正常编译 <br>
 		先安装vetur插件, 然后配置vscode首选项
 		'file.associations': {
 			'*.vue': 'vue'
