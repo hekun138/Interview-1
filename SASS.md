@@ -1,9 +1,25 @@
 # 步骤: 
 安装ruby环境  --->  在ruby环境环境中安装sass  --->  安装sass的框架compass
 
-或者直接安装基于node的sass
-安装: npm i node-sass
-使用: 将sass命令换成node-sass, 其他命令一样
+node环境中使用sass
+
+	1. 安装
+		npm i --save-dev sass-loader
+		npm i --save-dev node-sass
+	2. 配置
+		在build目录下的 webpack.base.conf.js的rules里面添加
+		{
+		  test: /\.sass$/,
+		  loaders: ['style', 'css', 'sass']
+		}
+	3. 在APP.vue中修改style标签
+		<style lang='scss'>
+	4. vscode中 vue 的scss显示语法错误, 但是webpack正常编译
+		先安装vetur插件, 然后配置vscode首选项
+		'file.associations': {
+			'*.vue': 'vue'
+		}
+	
 
 ## 1. 安装ruby
 [安装ruby地址](https://rubyinstaller.org/downloads/ "ruby官网") <br>
