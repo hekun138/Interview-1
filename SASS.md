@@ -1,7 +1,7 @@
 # 步骤: 
-安装ruby环境  --->  在ruby环境环境中安装sass  --->  安装sass的框架compass
+1. 非node环境中使用sass: 安装ruby环境  --->  在ruby环境环境中安装sass  --->  安装sass的框架compass
 
-node环境中使用sass
+2. node环境中使用sass
 
 	1. 安装
 		npm i --save-dev sass-loader
