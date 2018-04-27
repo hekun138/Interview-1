@@ -88,13 +88,24 @@
 			npm i --save-dev babel-preset-latest
 	使用
 	
-### style-loader css-loader	postcss-loader
-	功能	解析css
-	安装	npm i css-loader style-loader --save-dev
+### style-loader css-loader	postcss-loader	node-sass sass-loader
+	功能	autoprefixer:  		postcss-loader需要依赖的插件
+			postcss-loader:		处理css文件中的兼容性
+			css-loader:			使你能够使用类似@import 和 url(…)的方法实现 require()的功能
+			style-loader:		将所有的计算后的样式加入页面中
+			node-sass: 			sass-loader的依赖项
+			sass-loader: 		
+	
+	安装	npm i --save-dev css-loader 
+			npm i --save-dev style-loader	
 			npm i --save-dev postcss-loader
 			npm i --save-dev autoprefixer
+	
+			npm i node-sass --save-dev
+			npm i sass-loader --save-dev
 	使用
 		
+
 
 			
 ###  坑
