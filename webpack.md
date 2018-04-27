@@ -60,15 +60,86 @@
 			filename: '[name].js'				[name] 为 entry对应的 key1, key2
 			filename: '[name]-[hash].js'		[hash] 为 每次打包生成的hash
 			filename: '[name]-[chunkhash].js'   [chunkhash] 为 每次修改过后打包文件的版本号, 也是md5值, 如果文件不修改则没有hash 
-		
-###  坑
-	1. 打包报错	The CLI moved into a separate package: webpack-cli
-	原因:版本的问题	 webpack4.x版本 需要在配置文件中添加  mode: 'development'或者 mode: 'production'
+			
+### html-webpack-plugin
+	功能	让html可以自动引用打包出来的js
+	安装	npm i html-webpack-plugin --save-dev 
+	使用	1.  先导入		const htmlWebpackPlugin = require('html-webpack-plugin');
+			2.  再初始化	plugins: [        // 初始化插件(不初始化插件用不了)
+								new htmlWebpackPlugin({
+			3.  传入指定html模板	template: 'index.html'  
+								})
+							]
+							
+### loader 和 rules
+	功能	处理webpack不支持的资源文件, 并返回支持的格式
+	使用	module: {
+				rules: [		// webpack4.x使用rules, 低版本使用loaders
+					{
+						test: /\.js$/,
+						loader: 'babel'
+					}
+				]
+			}
 	
-	2. entry: 'demo.js' 入口文件的路径不能写成相对路径, 例如  ./demo.js  否则报错, 改成 demo.js
+### babel-loader babel-core babel-preset-latest
+	功能	转换es6
+	安装	npm i --save-dev babel-loader babel-core
+			npm i --save-dev babel-preset-latest
+	使用
+	
+### style-loader css-loader	postcss-loader
+	功能	解析css
+	安装	npm i css-loader style-loader --save-dev
+			npm i --save-dev postcss-loader
+			npm i --save-dev autoprefixer
+	使用
+		
 
-	3. 打包成功确找不到打包文件
+			
+###  坑
+	1.	mode不能忘 
+		打包报错	The CLI moved into a separate package: webpack-cli
+		原因:版本的问题	 webpack4.x版本 需要在配置文件中添加  mode: 'development'或者 mode: 'production'
+	
+	2.  entry 路径格式按版本写
+		entry: 'demo.js' 入口文件的路径不能写成相对路径, 例如  ./demo.js  否则报错, 改成 demo.js
+
+	3.  path 路径默认为c盘
+		打包成功确找不到打包文件
 		path: __dirname + '/dist/js',  输出路径不能忘记项目路径, 如果写成 path: '/dist/js', 打包文件会输出到C:\dist\js目录下
+	
+	4.  loader 新版本不能缩写
+		loader: 'babel-loader' 写成 loader: 'babel' 有的版本会报错, 因为webpack4.x的loader不支持缩写
+	
+	5. exclude 和 include 路径
+		exclude: __dirname + '/node_modules/'   或	  include: path.resolve(__dirname, 'node_modules')
+		include: __dirname + '/src/'	或 		include: path.resolve(__dirname, 'src')
+	
+	6. 报错 No PostCSS Config found in
+		webpack4.x 需要在项目根目录新建一个 postcss.config.js 内容
+		module.exports = {
+			plugins: {
+				'autoprefixer': { browsers: 'last 5 version' }
+			}
+		} 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
