@@ -132,6 +132,7 @@ git各阶段常用命令
 	git remote -v				查看可以抓取和推送的origin地址(fetch可以抓取的origin地址,push可以推送的origin地址,如果没有推送权限，就看不到push的地址)
 	git branch -r 				列出远程分支
 	git remote prune origin		删除远程库中已经不存在的分支
+	git checkout -b 本地分支名 远程分支名 	拉取远程分支并创建本地分支
 	
 	3.拉取(git pull相当于git fetch和git merge)
 	git pull		等价于git pull origin	从远程仓库更新到本地
