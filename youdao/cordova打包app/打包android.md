@@ -24,7 +24,10 @@
 				handler.proceed();
 			}
 			
-		
+##### cordova更新代码和配置文件之后，更新无效
+	在项目主目录下执行命令：
+		cordova build
+		cordova platform update android
 
     
     
