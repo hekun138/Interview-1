@@ -75,9 +75,15 @@
 	// 因为不支持路径 / 所以 要把 / 改为 ./
 	
 	// 使用方法
-	style={{ backgroundImage: `url(.${staticImage.logo})` }}   
-	或者
-	src={`.${staticImage.logo}`}
+	第一种情况，图片没有被webpack压缩成base64格式，此时要将 / 改为 ./
+		style={{ backgroundImage: `url(.${staticImage.logo})` }}   
+		或者
+		src={`.${staticImage.logo}`}
+		
+	第二种情况，图片被webpack压缩成base64格式，此时正常引用就好
+		style={{ backgroundImage: `url(${staticImage.logo})` }}   
+		或者
+		src={staticImage.logo}
      
     
 #### 加载icon失败
@@ -85,9 +91,35 @@
 	将编译后的css文件中的路径的 /static/media 改成 指定的路径 (一般是改成../media)
     
 #### http请求失败
+	原因和解决方法：http://www.ionic.wang/article-index-id-177.html
 	
+	原因：
+		Android 9.0(SDK 28) 及以上默认使用加密链接，也就无法使用http
+		
+	解决方法:
+		1. 将http请求改成https
+		2. targetSdkVersion 降到27及以下
+	
+	第二种方法的步骤：
+		1. 找到targetSdkVersion，将值改成27
+			修改 /platforms/android/app/src/main/AndroidManifest.xml
+			<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="27" />
+	
+		2. 新建一个xml文件，写入允许开启http请求的脚本
+			新建 /platforms/android/app/src/main/res/network_security_config.xml
+			<?xml version="1.0" encoding="utf-8"?>
+			<network-security-config>
+				<base-config cleartextTrafficPermitted="true" />
+			</network-security-config>
+		
+		3.  在AndroidManifest.xml文件中的application标签增加属性，引入http配置文件
     
-    
+			修改 /platforms/android/app/src/main/AndroidManifest.xml
+			<application
+			...
+			 android:networkSecurityConfig="@xml/network_security_config"
+			...
+			/>
     
     
     
