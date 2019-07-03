@@ -28,11 +28,64 @@
 	在项目主目录下执行命令：
 		cordova build
 		cordova platform update android
+		
+#### 打包之后出现白屏
+	脚本引用路径不支持 "/xxx.js", 将 "/xxx.js" 改为 "xxx.js" 或者 "./xxx.js"
+	一般出现的地方：
+		index.html中引用ico,css脚本,js脚本等
+		使用require动态加载图片时，引用的时候，编译后的值是 /static/media/xxx
+		引用icon编译后，在css文件中生成的路径是 /static/media/xxx
+	
+#### 不支持react的预加载 Loadable
+	在react项目的中
+	如果使用了 
+	import Loadable from 'react-loadable'
+	import Loading from '@/component/Loading'
+	const LoadableComponent = Loadable({
+		loader: () => import('./route'),
+		loading: Loading,
+	})
+	ReactDOM.render(
+		<Provider {...stores}>
+			<LoadableComponent />
+		</Provider>, 
+		document.getElementById('root')
+	)
+	
+	则会出现一个loading一直转，应该改为
+	import GetRouter from './route'
+	ReactDOM.render(
+		<Provider {...stores}>
+			<GetRouter />
+		</Provider>, 
+		document.getElementById('root')
+	)
 
+#### 加载图片失败
+	使用动态加载图片
+	config.js
+		export const staticImage = {
+			logo: require('@/assets/images/logo.png'),
+		};
+		
+	login.jsx
+	import config, { staticImage } from '@/config'
+	alert(staticImage.logo); 
+	// 此时打印出来的值为  /static/media/logo.xxx.png
+	// 因为不支持路径 / 所以 要把 / 改为 ./
+	
+	// 使用方法
+	style={{ backgroundImage: `url(.${staticImage.logo})` }}   
+	或者
+	src={`.${staticImage.logo}`}
+     
     
+#### 加载icon失败
+	引用icon编译后，在css文件中生成的路径是 /static/media/xxx.xxx.eot等
+	将编译后的css文件中的路径的 /static/media 改成 指定的路径 (一般是改成../media)
     
-    
-    
+#### http请求失败
+	
     
     
     
