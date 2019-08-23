@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./icon/iconfont.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        html {
+            overflow: auto;
+        
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", 
+                FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", 
+                "Hiragino Sans GB W3", "FontAwesome", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow: hidden;
+            font-size: 12px;
+            background: #e2e2e2;
+        }
+
+        #root {
+            width: 100%;
+            height: 100%;
+        }
+
+        code {
+            font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+            monospace;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a, button, input, select, textarea {
+            outline: none;
+            color: #666;
+        }
+
+        header {
+            width: 100%;
+            height: 1rem;
+            line-height: 1rem;
+            padding: 0 0.3rem;
+            display: block;
+            background: #fff;
+        }
+        header .iconleft {
+            display: inline-block;
+            width: 0.4rem;
+            height: 1rem;
+            float: left;
+            color: #00a1e9;
+        }
+        header .turnback {
+            font-size: 12px;
+            float: left;
+            color: #00a1e9;
+        }
+        header .iconmore {
+            display: inline-block;
+            width: 40px;
+            height: 1rem;
+            position: absolute;
+            right: 0;
+            color: #00a1e9;
+        }
+        
+        .main {
+            width: 100%;
+            height: 4rem;
+            overflow: hidden;
+            background: #fff;
+        }
+        .main .iconzhifubao {
+            display: block;
+            width: 1.3rem;
+            height: 1.3rem;
+            font-size: 1.3rem;
+            margin: 0.6rem auto 0;
+            color: #00a1e9;
+        }
+        .main p:nth-of-type(1) {
+            height: 0.4rem;
+            text-align: center;
+            margin: 0.2rem auto;
+            font-weight: bold;
+        }
+        .main p:nth-of-type(2) {
+            height: 0.4rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .list {
+            width: 100%;
+            height: 6rem;
+            overflow: hidden;
+            padding: 0 1rem;
+            margin: 0.4rem 0;
+        }
+
+        .list .item {
+            width: 100%;
+            height: 0.6rem;
+            line-height: 0.6rem;
+            border: 1px solid gray;
+            padding-left: 0.3rem;
+            display: flex;
+            margin-bottom: 6px;
+        }
+
+        
+
+        .list .item .iconhorn {
+            flex: 1;
+        }
+
+        .list .item .info {
+            flex: 8;
+        }
+
+        .list .item .iconclose {
+            flex: 1;
+            font-size: 12px;
+        }
+        
+        #gotopay {
+            display: block;
+            width: 3.2rem;
+            height: 1.1rem;
+            margin: 0.4rem auto 0;
+            background: #00a1e9;
+            color: #fff;
+            border: 1px solid #00a1e9;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <span class="iconfont iconleft"></span>       
+        <span class="turnback">返回</span> 
+        <span class="iconfont iconmore"></span>
+    </header>
+    <div class="main">
+        <span class="iconfont iconzhifubao"></span>
+        <p>11111111111111111</p>
+        <p>22222222222</p>
+    </div>
+    <ul class="list">
+        <li class="item">
+            <span class="iconfont iconhorn"></span>
+            <span class="info">1111111111111111111</span>
+            <span class="iconfont iconclose"></span>
+        </li>
+        <li class="item">
+            <span class="iconfont iconhorn"></span>
+            <span class="info">222222222222222222</span>
+            <span class="iconfont iconclose"></span>
+        </li>
+        <li class="item">
+            <span class="iconfont iconhorn"></span>
+            <span class="info">3333333333333333</span>
+            <span class="iconfont iconclose"></span>
+        </li>
+        <li class="item">
+            <span class="iconfont iconhorn"></span>
+            <span class="info">44444444444444444</span>
+            <span class="iconfont iconclose"></span>
+        </li>
+        <li class="item">
+            <span class="iconfont iconhorn"></span>
+            <span class="info">555555555555555</span>
+            <span class="iconfont iconclose"></span>
+        </li>
+        <li class="item">
+            <span class="iconfont iconhorn"></span>
+            <span class="info">66666666666666666</span>
+            <span class="iconfont iconclose"></span>
+        </li>
+        <li class="item">
+            <span class="iconfont iconhorn"></span>
+            <span class="info">77777777777777777</span>
+            <span class="iconfont iconclose"></span>
+        </li>
+        <li class="item">
+            <span class="iconfont iconhorn"></span>
+            <span class="info">8888888888888888</span>
+            <span class="iconfont iconclose"></span>
+        </li>
+        
+    </ul>
+    <button id="gotopay">确定</button>
+
+    <script>
+        window.onload = function () {
+            let html = document.getElementsByTagName('html')[0];
+            html.style.fontSize = document.body.clientWidth / 10 + 'px';
+
+            var list = document.getElementsByClassName('list')[0];
+            var closeBtn = list.getElementsByClassName('iconclose');
+
+            Array.prototype.forEach.call(closeBtn, function (item, index) {
+                item.onclick = function () {
+                    var list = document.getElementsByClassName('list')[0];
+                    var li = list.getElementsByClassName('item');
+                    list.removeChild(item.parentNode);
+                }
+            });
+
+
+
+        }
+        
+    </script>
+</body>
+</html>
