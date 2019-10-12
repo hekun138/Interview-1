@@ -3,7 +3,7 @@
 		<div class="nav"></div>
 		<ul class="list">
 			<!-- 卡片容器 -->
-			<li class="item" v-for="(item, i) in list" :key="i">
+			<li class="item" :class="`item_${i}`" v-for="(item, i) in list" :key="i">
 				<!-- 卡片 -->
 				<div class="card" :class="`card_${i}`">
 					<header @mousedown="move($event, i)">
@@ -130,6 +130,22 @@ export default {
 							// 是否需要换位
 							if (this.crashGreateThanHalf(moveDom, fixDom)) {
 								console.log(`${i}和${index}进行换位`)
+
+								let li_i = document.querySelector(`.item_${i}`);
+								let li_index = document.querySelector(`.item_${index}`);
+								let card_i = li_i.querySelector(`.card_${i}`);
+								let card_index = li_index.querySelector(`.card_${index}`);
+								console.log(li_i);
+								console.log(li_index);
+								console.log(card_i);
+								console.log(card_index);
+								if (card_index) {
+									li_i.append(card_index);
+								}
+								if (card_i) {
+									li_index.append(card_i);
+								}
+								// li_index.replaceChild(card_i, card_index);
 							}
 						} else {
 							
@@ -182,6 +198,7 @@ html, body, #app {
 	min-height: 800px;
 }
 .item {
+	position: relative;
 	width: 350px;
 	height: 350px;
 	float: left;
@@ -192,7 +209,7 @@ html, body, #app {
 }
 .card {
 	display: inline-block;
-	position: relative; /*定位*/
+	position: absolute; /*定位*/
 	width: 350px;
 	height: 350px;
 	background: #666; /*设置一下背景*/
