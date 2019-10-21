@@ -120,6 +120,10 @@ git各阶段常用命令
 	10. 删除分支
 	删除远程分支: git push origin --delete 分支名
 	删除本地分支: git branch -d 分支名
+	
+	10. 使用cherry-pick合并单次提交
+	git log --oneline -1(查询commitid)
+	git cherry-pick xxxxxx(commit, 合入单个commit)
 
 二、远程
 
