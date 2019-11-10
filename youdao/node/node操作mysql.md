@@ -19,6 +19,7 @@
                 port: '3306',
                 database: 'game',
                 multipleStatements: true,       // 可以同时执行多条sql语句
+                timezone: "08:00", // 解决mysql时区和node时区不一致导致获取时间格式有问题
             });
         
             config.connect((err) => {
