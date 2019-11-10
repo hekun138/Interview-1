@@ -10,6 +10,7 @@
     		username varchar(20) not null comment '用户名',	// not null 非空
     		age tinyint unsigned not null comment '年龄',  // unsigned 为无符号位
     		salary float(8,2) unsigned not null comment '工资' // comment 为字段的注释
+            sendTime timestamp not null default current_timestamp comment '时间',
     		)comment='用户工资表'; // comment 为表的注释
     		
     	b. 新增带时间数据 金额 int数据的表
