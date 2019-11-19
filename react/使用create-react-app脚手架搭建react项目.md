@@ -182,8 +182,17 @@
                   ],
                 },
               },
+              // less配置二选一
+              // 1. 注意：less为2.x版本的配置
               {
                 loader: require.resolve('less-loader') // compiles Less to CSS
+              }
+              // 2. 注意: less为3.x版本的配置
+              {
+                loader: require.resolve('less-loader'), // compiles Less to CSS
+                options: { 
+                  javascriptEnabled: true,
+                }
               }
             ],
          },
