@@ -159,4 +159,21 @@
 				'autoprefixer': { browsers: 'last 5 version' }
 			}
 		} 
+		
+##### webpack设置css中的图片引用url路径为相对路径
+	 {
+                test: /\.(png|jpg|gif)$/,
+                //use: 'url-loader?limit=8192&name=images/[hash].[ext]?',
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                            esModule: false,
+                            name: 'images/[hash].[ext]',
+                            publicPath: '../../',  // webpack设置css中的图片引用url路径为相对路径 ../../
+                        },
+                    },
+                ],
+           },
     
