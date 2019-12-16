@@ -92,6 +92,7 @@
     
 #### http请求失败
 	原因和解决方法：http://www.ionic.wang/article-index-id-177.html
+	4种解决方法  https://cloud.tencent.com/developer/article/1414675
 	
 	原因：
 		Android 9.0(SDK 28) 及以上默认使用加密链接，也就无法使用http
