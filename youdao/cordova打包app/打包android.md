@@ -91,6 +91,7 @@
 	将编译后的css文件中的路径的 /static/media 改成 指定的路径 (一般是改成../media)
     
 #### http请求失败
+```
 	原因和解决方法：http://www.ionic.wang/article-index-id-177.html
 	4种解决方法  https://cloud.tencent.com/developer/article/1414675
 	
@@ -100,6 +101,8 @@
 	解决方法:
 		1. 将http请求改成https
 		2. targetSdkVersion 降到27及以下
+		3. 开启明文传输 
+		
 	
 	第二种方法的步骤：
 		1. 找到targetSdkVersion，将值改成27
@@ -121,6 +124,13 @@
 			 android:networkSecurityConfig="@xml/network_security_config"
 			...
 			/>
+	第三种方法：	
+	修改 /platforms/android/app/src/main/AndroidManifest.xml
+	<application
+	...
+	 android:usesCleartextTraffic="true"
+	...
+```
     
     
     
