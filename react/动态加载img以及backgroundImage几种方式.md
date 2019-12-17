@@ -29,7 +29,7 @@
     // 获取所有图片
     const levelList = requireContext.keys().map(requireContext);
     
-    lconst list = levelList.map((a, i) => {
+    const list = levelList.map((a, i) => {
         return <img src={a} />
     });
     
