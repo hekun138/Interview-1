@@ -138,4 +138,31 @@
 
     }
 
+#### nginx配置使用 单端口+多路由 映射多个 web前端页面
+```
+    1. windows
+    修改配置文件nginx.conf
+    server {
+        listen       8088;
+        server_name  localhost;
+		
+		# web服务器目录
+		root "C:/Users/lanyu/Desktop/nginxweb/";
+	
+		# 子目录项目1
+        # 代理访问地址 http://localhost:8088/h5app
+		location ^~ /h5app/ {
+			try_files $uri $uri/ /h5app/index.html;  #如果找不到文件，就返回 C:/Users/lanyu/Desktop/nginxweb/h5app/index.html
+		}
+		# 子目录项目2
+        # 代理访问地址 http://localhost:8088/h5manager
+		location ^~ /h5manager/ {
+		   try_files $uri $uri/ /h5manager/index.html;  #如果找不到文件，就返回 C:/Users/lanyu/Desktop/nginxweb/h5manager/index.html
+		}
+    }
     
+    注意：前端的引用静态资源路径要改成相对路径 ./  例如修改webpack打包中配置文件中 publicPath='./'
+
+
+```
+
