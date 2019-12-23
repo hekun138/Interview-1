@@ -162,6 +162,29 @@
     }
     
     注意：前端的引用静态资源路径要改成相对路径 ./  例如修改webpack打包中配置文件中 publicPath='./'
+    
+    
+    2. linux设置
+    server {
+        listen       8088;
+        server_name  localhost;
+	
+	root /hb;
+	
+        location ^~ /h5/ {
+                try_files $uri $uri/ /h5/index.html;
+        }
+
+        location ^~ /app/ {
+                try_files $uri $uri/ /app/index.html;
+        }
+
+        location ^~ /h5manager/ {
+                try_files $uri $uri/ /h5manager/index.html;
+        }
+
+    }
+   
 
 
 ```
