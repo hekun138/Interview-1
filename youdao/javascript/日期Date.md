@@ -105,10 +105,35 @@
 	// 获取时分
 	getFormatDate(time).month
 	
-    
-    
-    
-    
+##### moment.js和原生new Date() 之间的转换关系
+
+	时间
+	获取指定年月日
+		获取今年
+			let year = new Date().getFullYear(); // 2020
+		获取指定年月日 2020-01-01
+			new Date(2020, 0, 1);
+		获取今年8月8日
+			new Date(year, 8, 8)
+		获取今年8月8日23:59:59
+			new Date(year, 8-1, 8, 23, 59, 59)
+		获取去年1月1日
+			new Date(year - 1, 1-1, 1)
+		获取明年12月31日23:59:59
+			new Date(year + 1, 12-1, 1, 23, 59, 59)
+
+	moment.js 
+		momentjs的时间对象转时间戳
+			date.getTime()
+		momentjs的时间对象转格式化
+			moment(date.getTime()).format("YYYY-MM-DD")
+
+		正常时间对象转momentjs的时间对象
+			moment(time.getTime()).add(0, 'days')._d
+
+		时间戳转momentjs的时间对象
+			moment(timestamp).add(0, 'days')._d
+		
     
     
     
