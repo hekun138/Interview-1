@@ -93,11 +93,12 @@ public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError e
 #### 3.  代码准备
 ```
 3-1. 在index.html中添加标签
-<meta 
-http-equiv="Content-Security-Policy"
-content="default-src 'self' https://codepush.appcenter.ms/
-data: gap: https://ssl.gstatic.com 
-'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+<meta http-equiv="Content-Security-Policy" content="
+default-src 'self' https://codepush.appcenter.ms/ data: gap: https://ssl.gstatic.com 'unsafe-eval'; 
+script-src 'self' 'unsafe-inline';
+style-src 'self' 'unsafe-inline'; 
+media-src *
+" />
 注意：https://codepush.appcenter.ms/ 这个是微软云服务器的地址，如果微软有更新，需要跟着更新
 
 3-2. 在项目脚本入口前加入更新判断
