@@ -36,17 +36,17 @@ cordova plugin add cordova-plugin-code-push
 2) Staging 为开发环境，Production 为生成环境，客户端app通过对应环境的DeploymentKey来拉取对应的更新
 3) 不需要配置版本号，每次code-push更新的时候，会自动生成新的版本号
 4) 更新解析
-Name环境名字
-Deployment Key 链接对应环境使用的密钥
-Staging 开发环境
-Production 生产环境
-Update Metadata 更新信息
-	Label: code-push自带的更新版本号
-	App Version: app版本
-	Mandatory: 该版本是否强制更新
-	Release Time：打包时间
-	Description：更新信息
-Install Metrics 安装信息
+	Name环境名字
+	Deployment Key 链接对应环境使用的密钥
+	Staging 开发环境
+	Production 生产环境
+	Update Metadata 更新信息
+		Label: code-push自带的更新版本号
+		App Version: app版本
+		Mandatory: 该版本是否强制更新
+		Release Time：打包时间
+		Description：更新信息
+	Install Metrics 安装信息
 		
 
 │ Name       │ Deployment Key                         │ Update Metadata              │ Install Metrics       │
