@@ -48,22 +48,22 @@ Update Metadata 更新信息
 	Description：更新信息
 Install Metrics 安装信息
 		
-			
-			│ Name       │ Deployment Key                         │ Update Metadata              │ Install Metrics       │
-			├────────────┼────────────────────────────────────────┼──────────────────────────────┼───────────────────────┤
-			│ Production │ V5qbICOLQr9ZM9JFpg1QURkoi4DPB09fQtSYQ2 │ Label: v1                    │ No installs recorded  │
-			│            │                                        │ App Version: 1.0.0           │                       │
-			│            │                                        │ Mandatory: Yes               │                       │
-			│            │                                        │ Release Time: a day ago      │                       │
-			│            │                                        │ Released By:                 │                       │
-			│            │                                        │ Description: v1              │                       │
-			├────────────┼────────────────────────────────────────┼──────────────────────────────┼───────────────────────┤
-			│ Staging    │ 9ZHUmYoyCnPBw07fSl61aIwlS8YbDhFBUTY55  │ Label: v24                   │ Active: 100% (1 of 1) │
-			│            │                                        │ App Version: 1.0.0           │ Total: 1              │
-			│            │                                        │ Mandatory: No                │                       │
-			│            │                                        │ Release Time: 30 minutes ago │                       │
-			│            │                                        │ Released By:                 │                       │
-			│            │                                        │ Description: v4              │
+
+│ Name       │ Deployment Key                         │ Update Metadata              │ Install Metrics       │
+├────────────┼────────────────────────────────────────┼──────────────────────────────┼───────────────────────┤
+│ Production │ V5qbICOLQr9ZM9JFpg1QURkoi4DPB09fQtSYQ2 │ Label: v1                    │ No installs recorded  │
+│            │                                        │ App Version: 1.0.0           │                       │
+│            │                                        │ Mandatory: Yes               │                       │
+│            │                                        │ Release Time: a day ago      │                       │
+│            │                                        │ Released By:                 │                       │
+│            │                                        │ Description: v1              │                       │
+├────────────┼────────────────────────────────────────┼──────────────────────────────┼───────────────────────┤
+│ Staging    │ 9ZHUmYoyCnPBw07fSl61aIwlS8YbDhFBUTY55  │ Label: v24                   │ Active: 100% (1 of 1) │
+│            │                                        │ App Version: 1.0.0           │ Total: 1              │
+│            │                                        │ Mandatory: No                │                       │
+│            │                                        │ Release Time: 30 minutes ago │                       │
+│            │                                        │ Released By:                 │                       │
+│            │                                        │ Description: v4              │
 					
 	
 2-2. 安装白名单插件
@@ -94,10 +94,11 @@ public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError e
 ```
 3-1. 在index.html中添加标签
 <meta 
-	http-equiv="Content-Security-Policy"
-	content="default-src 'self' https://codepush.appcenter.ms/
-	data: gap: https://ssl.gstatic.com 
-	'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+http-equiv="Content-Security-Policy"
+content="default-src 'self' https://codepush.appcenter.ms/
+data: gap: https://ssl.gstatic.com 
+'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+注意：https://codepush.appcenter.ms/ 这个是微软云服务器的地址，如果微软有更新，需要跟着更新
 
 3-2. 在项目脚本入口前加入更新判断
 在https://github.com/microsoft/cordova-plugin-code-push/blob/master/samples/basic/www/js/index.js下找到更新示例代码
