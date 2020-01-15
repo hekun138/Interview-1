@@ -182,3 +182,63 @@ var app = {
 
 app.initialize();
 ```
+
+#### code-push 命令行详解
+```
+
+这里的app名字为 "test"
+code-push命令
+删除服务器应用：code-push app rm 应用名
+code-push app rm test
+
+新增服务器应用：code-push app add 应用名 操作系统(ios/android) 平台名称(cordova)
+code-push app add test android cordova
+
+查看服务器应用列表：code-push app list
+
+更新服务器应用：code-push release-cordova 应用名 操作系统(ios/android) -m(是否强制更新该版本) --des "描述信息"
+code-push release-cordova test android --des "更新测试"
+
+查看服务器某个应用的详细信息：code-push deployment list 应用名
+code-push deployment list test
+	
+查看应用对应的开发环境(Staging)和生产环境(Production)的key：code-push deployment ls 应用名 -k
+code-push deployment ls test -k
+注意：这个key是配置在config.xml里面的，作用是用来链接客服端和服务器
+ <preference name="CodePushDeploymentKey" value="对应环境的key的值" />
+
+
+
+安装: npm install -g code-push-cli
+
+注册账号: code-push register
+
+登陆: code-push login
+
+注销: code-push logout
+
+添加项目: code-push app add [app名称]
+
+删除项目: code-push app remove [app名称]
+
+列出账号下的所有项目: code-push app list
+
+显示登陆的token: code-push access-key ls
+
+删除某个access-key: code-push access-key rm <accessKey>
+
+添加协作人员：code-push collaborator add <appName> next@126.com
+
+部署一个环境: code-push deployment add <appName> <deploymentName>
+
+删除部署: code-push deployment rm <appName>
+
+列出应用的部署: code-push deployment ls <appName>
+
+查询部署环境的key: code-push deployment ls <appName> -k
+
+查看部署的历史版本信息: code-push deployment history <appName> <deploymentNmae>
+
+重命名一个部署: code-push deployment rename <appName> <currentDeploymentName> <newDeploymentName>
+
+```
