@@ -35,7 +35,7 @@
     .container:hover +.wrap {
         
     }
-    // 改变所有相邻的兄弟节点
+    // 改变所有后面的兄弟节点
     .container:hover ~.wrap {
         
     }
